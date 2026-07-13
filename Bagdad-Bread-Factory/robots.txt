@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://bagdadbreadfactory.github.io/sitemap.xml
