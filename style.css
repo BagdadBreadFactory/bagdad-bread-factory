@@ -971,7 +971,7 @@ header.sticky{
 
 .call-btn {
     position: fixed;
-    left: 20px;
+    bottom: 20px;
     top: 50%;
     transform: translateY(-50%);
 
