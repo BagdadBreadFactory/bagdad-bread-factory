@@ -540,7 +540,64 @@ section h2{
 
 }
 
+/* ==========================
+   CONTACT
+========================== */
 
+.contact{
+
+    background:#fffaf5;
+    padding:90px 20px;
+    text-align:center;
+
+}
+
+.contact .container{
+
+    max-width:700px;
+    margin:0 auto;
+
+}
+
+.contact h2{
+
+    color:#8B4513;
+    font-size:48px;
+    margin-bottom:40px;
+
+}
+
+.contact-info{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+
+}
+
+.contact-item{
+
+    text-align:center;
+
+}
+
+.contact-item strong{
+
+    display:block;
+    color:#8B4513;
+    font-size:22px;
+    margin-bottom:6px;
+
+}
+
+.contact-item p{
+
+    font-size:18px;
+    color:#555;
+    margin:0;
+
+}
 
 /* ==========================
    FOOTER
@@ -679,126 +736,81 @@ header.sticky{
 
 }
 
-/* ==========================
-   MOBILE MENU
-========================== */
 
 @media(max-width:768px){
 
     .menu-toggle{
-
         display:block;
-
     }
 
     nav{
-
         position:relative;
-
     }
 
     nav ul{
-
         display:none;
-
         position:absolute;
-
         top:60px;
-
         right:0;
-
         width:220px;
-
         background:white;
-
         flex-direction:column;
-
         border-radius:12px;
-
         box-shadow:0 10px 25px rgba(0,0,0,.15);
-
         padding:20px;
-
     }
 
     nav ul.active{
-
         display:flex;
-
     }
 
     nav ul li{
-
         margin:15px 0;
-
     }
 
     .logo h2{
-
         font-size:18px;
-
     }
 
     .hero{
-
         height:85vh;
-
     }
 
     .hero-content h1{
-
         font-size:38px;
-
     }
 
     .hero-content h3{
-
         font-size:22px;
-
     }
 
     .hero-content p{
-
         font-size:18px;
-
     }
 
     .hero-buttons{
-
         flex-direction:column;
-
         align-items:center;
-
     }
 
     section{
-
         padding:70px 0;
-
     }
 
     section h2{
-
         font-size:32px;
-
     }
 
     .menu-card img{
-
         height:220px;
-
     }
 
     .gallery-card img{
-
         height:220px;
-
     }
 
     .stat-card h2{
-
         font-size:42px;
-
     }
 
 }
@@ -819,5 +831,4 @@ header.sticky{
     }
 
 }
-
 
