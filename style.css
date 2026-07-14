@@ -660,23 +660,44 @@ section h2{
 
 .call-btn {
     position: fixed;
-    left: 15px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
 
-    background: #8B4513;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.18); /* Transparent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    color: #000;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 16px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+    transition: all 0.3s ease;
+    z-index: 9999;
 }
 
-.call-btn:hover{
+.call-btn i,
+.call-btn svg {
+    color: #000;
+    fill: #000;
+}
 
-    background:#5c3310;
-
+.call-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* ==========================
@@ -978,26 +999,43 @@ header.sticky{
 
 .call-btn {
     position: fixed;
-    left: 15px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
 
-    background: #8B4513;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.18); /* Transparent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    color: #000;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 16px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+    transition: all 0.3s ease;
+    z-index: 9999;
 }
 
-.home-btn:hover,
-.call-btn:hover{
-
-    background:#5c3310;
-
-    transform:translateY(-3px);
-
+.call-btn i,
+.call-btn svg {
+    color: #000;
+    fill: #000;
 }
 
+.call-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
 
