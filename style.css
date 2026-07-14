@@ -612,94 +612,66 @@ section h2{
    CONTACT
 ========================== */
 
-.contact{
 
-    background:white;
-
-    text-align:center;
-
-}
-
-.contact p{
-
-    margin:18px 0;
-
-    font-size:18px;
-
-    color:#555;
-
-}
-
-.whatsapp{
-
-    display:inline-block;
-
-    margin-top:20px;
-
-    padding:15px 35px;
-
-    background:#25D366;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-.whatsapp:hover{
-
-    background:#1ea952;
-
-}
-
-.call-btn {
-    position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-
+/* Buttons Container */
+.contact-buttons {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
 
-    padding: 14px 22px;
-    border-radius: 50px;
+    width: 220px;
+    height: 52px;
 
-    background: rgba(255, 255, 255, 0.18); /* Transparent */
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1da851;
+}
+
+/* Call Button */
+.call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 220px;
+    height: 52px;
+
+    background: rgba(255,255,255,0.25);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid #000;
+    border-radius: 30px;
 
     color: #000;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 600;
 
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-
-    transition: all 0.3s ease;
-    z-index: 9999;
-}
-
-.call-btn i,
-.call-btn svg {
-    color: #000;
-    fill: #000;
+    transition: 0.3s;
 }
 
 .call-btn:hover {
-    background: rgba(255, 255, 255, 0.28);
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    background: rgba(255,255,255,0.45);
+    transform: translateY(-2px);
 }
-
 /* ==========================
    GOOGLE MAP
 ========================== */
