@@ -1004,142 +1004,529 @@ header.sticky{
 
 
 
+/* ==========================
+   MENU PAGE
+========================== */
+
+.menu{
+
+    background:#FFF8F0;
+
+    padding:80px 20px;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.section-title h1{
+
+    font-size:48px;
+
+    color:#8B4513;
+
+    margin-bottom:10px;
+
+}
+
+.section-title p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   MENU HERO
+========================== */
+
 .menu-hero{
 
-height:350px;
+    height:350px;
 
-background:url("images/menu-banner.jpg") center/cover;
+    background:url("images/menu-banner.jpg") center center/cover no-repeat;
 
-position:relative;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
+    position:relative;
 
 }
 
 .menu-hero .overlay{
 
-background:rgba(0,0,0,.55);
+    width:100%;
 
-width:100%;
+    height:100%;
 
-height:100%;
+    background:rgba(0,0,0,.55);
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    justify-content:center;
 
-justify-content:center;
+    align-items:center;
 
 }
 
 .menu-hero-content{
 
-text-align:center;
+    text-align:center;
 
-color:white;
+    color:#fff;
 
 }
 
 .menu-hero-content h1{
 
-font-size:55px;
+    font-size:60px;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
 }
 
 .menu-hero-content p{
 
-font-size:22px;
+    font-size:22px;
+
+    margin-bottom:30px;
 
 }
 
-/* Search */
+/* ==========================
+   SEARCH
+========================== */
 
 .menu-search{
 
-text-align:center;
+    text-align:center;
 
-margin-bottom:40px;
+    margin-bottom:40px;
 
 }
 
 .menu-search input{
 
-width:100%;
+    width:100%;
 
-max-width:500px;
+    max-width:550px;
 
-padding:15px 20px;
+    padding:15px 20px;
 
-border-radius:50px;
+    border:2px solid #8B4513;
 
-border:2px solid #8B4513;
+    border-radius:50px;
 
-font-size:18px;
+    font-size:17px;
 
-outline:none;
+    outline:none;
+
+    transition:.3s;
 
 }
 
-/* Floating WhatsApp */
+.menu-search input:focus{
+
+    border-color:#d97706;
+
+    box-shadow:0 0 15px rgba(217,119,6,.2);
+
+}
+
+/* ==========================
+   MENU CATEGORY
+========================== */
+
+.menu-category{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    margin-bottom:45px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.menu-category:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.menu-category h2{
+
+    background:#8B4513;
+
+    color:#fff;
+
+    padding:18px 25px;
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   MENU TABLE
+========================== */
+
+.menu-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.menu-table thead{
+
+    background:#F7E7CE;
+
+}
+
+.menu-table th{
+
+    padding:18px;
+
+    font-size:18px;
+
+    color:#8B4513;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.menu-table td{
+
+    padding:18px 22px;
+
+    border-bottom:1px solid #eee;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+.menu-table tr:hover{
+
+    background:#FFF5E8;
+
+}
+
+.menu-table td:first-child{
+
+    color:#333;
+
+    font-weight:500;
+
+}
+
+.menu-table td:last-child{
+
+    text-align:right;
+
+    font-weight:700;
+
+    color:#D97706;
+
+    font-size:18px;
+
+}
+
+/* Last Row */
+
+.menu-table tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+/* ==========================
+   SPECIAL ORDER
+========================== */
+
+.special-order{
+
+    background:#8B4513;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:50px 30px;
+
+    border-radius:20px;
+
+    margin:60px 0;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.special-order h2{
+
+    font-size:36px;
+
+    color:#FFD700;
+
+    margin-bottom:20px;
+
+}
+
+.special-order p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+/* WhatsApp Button */
+
+.order-btn{
+
+    display:inline-block;
+
+    background:#25D366;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:16px 35px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.order-btn:hover{
+
+    background:#1EBE5D;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================
+   CUSTOMER NOTE
+========================== */
+
+.menu-note{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:60px;
+
+}
+
+.menu-note h3{
+
+    color:#8B4513;
+
+    margin-bottom:20px;
+
+}
+
+.menu-note ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.menu-note li{
+
+    padding:12px 0;
+
+    border-bottom:1px solid #eee;
+
+    font-size:17px;
+
+}
+
+.menu-note li:last-child{
+
+    border-bottom:none;
+
+}
+
+/* ==========================
+   FLOATING BUTTONS
+========================== */
+
+.home-btn,
+.call-btn,
+.whatsapp-btn{
+
+    position:fixed;
+
+    left:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:150px;
+
+    padding:14px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:600;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.home-btn{
+
+    bottom:150px;
+
+    background:#8B4513;
+
+}
+
+.call-btn{
+
+    bottom:85px;
+
+    background:#C97A1D;
+
+}
 
 .whatsapp-btn{
 
-position:fixed;
+    bottom:20px;
 
-right:20px;
-
-bottom:25px;
-
-background:#25D366;
-
-color:white;
-
-padding:15px 25px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-weight:600;
-
-z-index:999;
-
-transition:.3s;
+    background:#25D366;
 
 }
 
+.home-btn:hover,
+.call-btn:hover,
 .whatsapp-btn:hover{
 
-background:#1da851;
-
-transform:translateY(-4px);
+    transform:translateY(-5px);
 
 }
+
+/* ==========================
+   MOBILE
+========================== */
 
 @media(max-width:768px){
 
-.menu-hero{
+    .menu{
 
-height:250px;
+        padding:60px 15px;
 
-}
+    }
 
-.menu-hero-content h1{
+    .menu-hero{
 
-font-size:38px;
+        height:240px;
 
-}
+    }
 
-.menu-hero-content p{
+    .menu-hero-content h1{
 
-font-size:18px;
+        font-size:38px;
 
-}
+    }
+
+    .menu-hero-content p{
+
+        font-size:17px;
+
+    }
+
+    .section-title h1{
+
+        font-size:34px;
+
+    }
+
+    .menu-category h2{
+
+        font-size:24px;
+
+    }
+
+    .menu-table th,
+    .menu-table td{
+
+        padding:14px;
+
+        font-size:15px;
+
+    }
+
+    .special-order{
+
+        padding:35px 20px;
+
+    }
+
+    .special-order h2{
+
+        font-size:28px;
+
+    }
+
+    .home-btn,
+    .call-btn,
+    .whatsapp-btn{
+
+        width:58px;
+
+        height:58px;
+
+        padding:0;
+
+        border-radius:50%;
+
+        font-size:22px;
+
+    }
 
 }
