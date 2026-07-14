@@ -897,3 +897,55 @@ header.sticky{
 .github{
     background:#24292F;
 }
+
+
+
+/* ==========================
+   FOOTER SOCIAL ICONS
+========================== */
+
+.footer-social{
+
+    text-align:center;
+
+    padding:20px 0;
+
+}
+
+.footer-social a{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:45px;
+
+    height:45px;
+
+    margin:0 10px;
+
+    background:#ffffff;
+
+    color:#8B4513;
+
+    border-radius:50%;
+
+    font-size:22px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-social a:hover{
+
+    background:#FFD700;
+
+    color:#000;
+
+    transform:translateY(-5px);
+
+}
