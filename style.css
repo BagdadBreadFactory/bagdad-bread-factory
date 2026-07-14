@@ -832,3 +832,68 @@ header.sticky{
 
 }
 
+
+/* ==========================
+   SOCIAL BUTTONS
+========================== */
+
+.footer-social{
+    flex:1;
+    min-width:220px;
+}
+
+.footer-social h3{
+    margin-bottom:20px;
+    color:#fff;
+}
+
+.social-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.social-btn{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.social-btn i{
+    font-size:22px;
+}
+
+.social-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+
+/* Facebook */
+
+.facebook{
+    background:#1877F2;
+}
+
+/* Instagram */
+
+.instagram{
+    background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+}
+
+/* GitHub */
+
+.github{
+    background:#24292F;
+}
