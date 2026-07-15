@@ -708,9 +708,17 @@ footer {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.09); /* Slightly increased visibility */
+    color: var(--text-light);                    /* FIX: Force white icons inside footer */
     font-size: 1rem;
     transition: var(--transition);
+}
+
+/* FIX: If icons render inline inside SVGs, this forces them to match the link color */
+.footer-social a svg {
+    fill: currentColor;
+    width: 16px;
+    height: 16px;
 }
 
 .footer-social a:hover {
@@ -738,8 +746,9 @@ footer {
     gap: 8px;
     padding: 6px 14px;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-light);                    /* FIX: Force link text visibility */
     transition: var(--transition);
 }
 
@@ -755,7 +764,7 @@ footer {
 .footer-centered-links a:hover {
     opacity: 1;
     color: var(--accent-color);
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.12);
     border-color: var(--accent-color);
     transform: translateY(-1px);
 }
