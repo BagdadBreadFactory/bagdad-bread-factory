@@ -31,6 +31,7 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 img {
@@ -56,7 +57,29 @@ ul {
 }
 
 /* ==========================================================================
-   2. HEADER & NAVIGATION
+   2. SCROLL ANIMATION STATES (JavaScript-linked)
+   ========================================================================== */
+section.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Bypass scroll-animation on hero sections so they load instantly */
+section.hero.hidden,
+section.menu-hero.hidden {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION
    ========================================================================== */
 header {
     background-color: rgba(253, 251, 247, 0.95);
@@ -65,13 +88,21 @@ header {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    transition: var(--transition);
+    padding: 15px 0;
+}
+
+/* Sticky Class triggered by JavaScript */
+header.sticky {
+    padding: 8px 0;
+    background-color: rgba(253, 251, 247, 0.98);
+    box-shadow: 0 4px 20px rgba(46, 37, 32, 0.1);
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
 }
 
 .logo {
@@ -86,6 +117,12 @@ header .container {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+header.sticky .logo img {
+    height: 42px;
+    width: 42px;
 }
 
 .logo h2 {
@@ -96,76 +133,74 @@ header .container {
 
 nav ul {
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 nav ul li a {
     font-weight: 500;
     font-size: 0.95rem;
     color: var(--text-dark);
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
     color: var(--primary-color);
-    background-color: rgba(139, 69, 19, 0.05);
+    background-color: rgba(139, 69, 19, 0.08);
 }
 
-/* Mobile Menu Toggle */
+/* Mobile Menu Toggle button */
 .menu-toggle {
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
     color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
 }
 
 /* ==========================================================================
-   3. HERO SECTIONS
+   4. HERO SECTIONS
    ========================================================================== */
 /* Home Page Hero */
 .hero {
-    background: url('images/hero.jpg') no-repeat center center/cover;
-    height: 90vh;
-    position: relative;
+    background: linear-gradient(rgba(46, 37, 32, 0.6), rgba(46, 37, 32, 0.6)), url('images/hero.jpg') no-repeat center center/cover;
+    height: 85vh;
+    display: flex;
+    align-items: center;
 }
 
 /* Menu Page Hero */
 .menu-hero {
-    background: url('images/menu-hero.jpg') no-repeat center center/cover;
-    height: 60vh;
-    position: relative;
-}
-
-/* Fallback backgrounds if images are missing */
-.hero, .menu-hero {
-    background-color: var(--bg-dark);
+    background: linear-gradient(rgba(46, 37, 32, 0.75), rgba(46, 37, 32, 0.75)), url('images/menu-hero.jpg') no-repeat center center/cover;
+    height: 55vh;
+    display: flex;
+    align-items: center;
 }
 
 .overlay {
-    background: linear-gradient(rgba(46, 37, 32, 0.8), rgba(46, 37, 32, 0.6));
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     padding: 20px;
 }
 
 .hero-content, .menu-hero-content {
     max-width: 800px;
+    margin: 0 auto;
     color: var(--text-light);
 }
 
 .hero-content h3 {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 1.3rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: var(--accent-color);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .hero-content h1, .menu-hero-content h1 {
@@ -173,28 +208,30 @@ nav ul li a.active {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content p, .menu-hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .menu-hero-content .menu-logo {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     margin: 0 auto 20px auto;
     border: 3px solid var(--accent-color);
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .since {
     font-style: italic;
     color: var(--accent-color);
     font-weight: 600;
+    letter-spacing: 1px;
 }
 
 /* Buttons */
@@ -207,12 +244,14 @@ nav ul li a.active {
 
 .btn, .btn2 {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 14px 32px;
     font-weight: 600;
     border-radius: 30px;
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
 }
 
 .btn {
@@ -225,6 +264,7 @@ nav ul li a.active {
     background-color: transparent;
     color: var(--text-light);
     border-color: var(--text-light);
+    transform: translateY(-2px);
 }
 
 .btn2 {
@@ -237,35 +277,36 @@ nav ul li a.active {
     background-color: transparent;
     color: var(--text-light);
     border-color: #25D366;
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   4. HOME PAGE SECTIONS
+   5. HOME PAGE SECTIONS
    ========================================================================== */
-/* Global Section Header styling */
 section {
-    padding: 80px 0;
+    padding: 90px 0;
 }
 
 section h2 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: var(--primary-color);
     margin-bottom: 50px;
     position: relative;
+    font-weight: 700;
 }
 
 section h2::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 3px;
+    width: 70px;
+    height: 4px;
     background-color: var(--secondary-color);
-    margin: 10px auto 0 auto;
+    margin: 12px auto 0 auto;
     border-radius: 2px;
 }
 
-/* Features */
+/* Features Section */
 .features {
     background-color: var(--text-light);
 }
@@ -273,13 +314,13 @@ section h2::after {
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 35px;
 }
 
 .feature-card {
     background: var(--bg-light);
-    padding: 40px 30px;
-    border-radius: 12px;
+    padding: 45px 35px;
+    border-radius: 16px;
     text-align: center;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
@@ -289,29 +330,31 @@ section h2::after {
 .feature-card:hover {
     transform: translateY(-8px);
     border-color: var(--secondary-color);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.1);
 }
 
 .feature-card h3 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
-/* About Us */
+/* About Section */
 .about {
     background-color: var(--bg-light);
 }
 
 .about p {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     text-align: center;
     font-size: 1.15rem;
     color: var(--text-dark);
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
-/* Gallery */
+/* Gallery Section */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -320,33 +363,42 @@ section h2::after {
 
 .gallery-card {
     background-color: var(--text-light);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .gallery-card:hover {
-    transform: scale(1.03);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .gallery-card img {
     width: 100%;
-    height: 250px;
+    height: 260px;
     object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
 }
 
 .gallery-card h3 {
     text-align: center;
-    padding: 20px;
+    padding: 22px;
     color: var(--primary-color);
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
-/* Stats Counter */
+/* Stats Section */
 .stats {
     background-color: var(--bg-dark);
     color: var(--text-light);
+    padding: 80px 0;
 }
 
 .stats-grid {
@@ -357,9 +409,10 @@ section h2::after {
 }
 
 .stat-card h2 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: var(--accent-color);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-weight: 800;
 }
 
 .stat-card h2::after {
@@ -367,13 +420,14 @@ section h2::after {
 }
 
 .stat-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.8;
+    letter-spacing: 2px;
+    font-weight: 500;
+    opacity: 0.85;
 }
 
-/* Contact Us */
+/* Contact Section */
 .contact {
     background-color: var(--text-light);
 }
@@ -381,39 +435,49 @@ section h2::after {
 .contact-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 25px;
 }
 
 .contact-item {
     text-align: center;
-    padding: 25px;
+    padding: 30px 20px;
     background: var(--bg-light);
-    border-radius: 8px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    border-color: var(--primary-color);
 }
 
 .contact-item strong {
     display: block;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 /* ==========================================================================
-   5. MENU PAGE SPECIFICS
+   6. MENU PAGE SPECIFICS
    ========================================================================== */
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .section-title h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     color: var(--primary-color);
 }
 
-/* Search Bar */
+.section-title p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Menu Search bar */
 .menu-search {
     max-width: 500px;
     margin: 0 auto 50px auto;
@@ -421,32 +485,34 @@ section h2::after {
 
 .menu-search input {
     width: 100%;
-    padding: 15px 25px;
+    padding: 16px 28px;
     font-size: 1rem;
     border: 2px solid var(--border-color);
     border-radius: 30px;
     font-family: var(--font-main);
     outline: none;
     transition: var(--transition);
+    box-shadow: var(--box-shadow);
 }
 
 .menu-search input:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(139, 69, 19, 0.1);
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15);
 }
 
-/* Menu Category & Tables */
+/* Menu Category Design */
 .menu-category {
     background: var(--text-light);
-    padding: 30px;
-    border-radius: 12px;
+    padding: 40px;
+    border-radius: 16px;
     box-shadow: var(--box-shadow);
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    border: 1px solid var(--border-color);
 }
 
 .menu-category h2 {
     text-align: left;
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 25px;
     color: var(--primary-color);
 }
@@ -455,15 +521,15 @@ section h2::after {
     margin: 8px 0 0 0;
 }
 
+/* Menu Tables */
 .menu-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
 }
 
 .menu-table th,
 .menu-table td {
-    padding: 15px 20px;
+    padding: 16px 24px;
     text-align: left;
 }
 
@@ -472,6 +538,7 @@ section h2::after {
     color: var(--primary-color);
     font-weight: 600;
     border-bottom: 2px solid var(--border-color);
+    font-size: 1.1rem;
 }
 
 .menu-table tbody tr {
@@ -480,27 +547,29 @@ section h2::after {
 }
 
 .menu-table tbody tr:hover {
-    background-color: rgba(139, 69, 19, 0.02);
+    background-color: rgba(139, 69, 19, 0.03);
 }
 
 .menu-table td {
     font-size: 1.05rem;
 }
 
+/* Targets the price column */
 .menu-table td:last-child {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--secondary-color);
+    font-size: 1.1rem;
 }
 
-/* Special Custom Order Banner */
+/* Special Banner */
 .special-order {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     color: var(--text-light);
-    padding: 50px 40px;
-    border-radius: 12px;
+    padding: 60px 40px;
+    border-radius: 16px;
     text-align: center;
     box-shadow: var(--box-shadow);
-    margin: 50px 0;
+    margin: 60px 0;
 }
 
 .special-order h2 {
@@ -513,8 +582,8 @@ section h2::after {
 }
 
 .special-order p {
-    font-size: 1.15rem;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
     opacity: 0.9;
 }
 
@@ -522,90 +591,101 @@ section h2::after {
     display: inline-block;
     background-color: #25D366;
     color: var(--text-light);
-    padding: 14px 35px;
-    border-radius: 30px;
+    padding: 15px 40px;
+    border-radius: 35px;
     font-weight: 600;
-    font-size: 1.05rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    transition: var(--transition);
 }
 
 .order-btn:hover {
     background-color: #20ba5a;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(32, 186, 90, 0.3);
 }
 
-/* Menu Notes / Notice Box */
+/* Notice Box */
 .menu-note {
-    background-color: #FFFBF0;
-    border-left: 5px solid #FFCC00;
-    padding: 30px;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 40px;
+    background-color: #FFFDF3;
+    border-left: 6px solid var(--accent-color);
+    padding: 35px;
+    border-radius: 0 16px 16px 0;
+    margin-bottom: 50px;
     box-shadow: var(--box-shadow);
 }
 
 .menu-note h3 {
-    color: #B27A00;
-    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .menu-note ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 20px;
 }
 
 .menu-note ul li {
-    font-size: 0.95rem;
-    list-style: none;
+    font-size: 1rem;
     color: var(--text-dark);
 }
 
 /* ==========================================================================
-   6. FOOTER
+   7. FOOTER
    ========================================================================== */
 footer {
     background-color: var(--bg-dark);
     color: var(--text-light);
-    padding: 70px 0 20px 0;
+    padding: 80px 0 30px 0;
 }
 
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 40px;
     margin-bottom: 50px;
 }
 
 .footer-logo img {
-    height: 60px;
-    width: 60px;
+    height: 65px;
+    width: 65px;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     border: 2px solid var(--accent-color);
 }
 
 .footer-logo h2 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--text-light);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
 }
 
 .footer-logo p {
-    opacity: 0.7;
-    font-size: 0.9rem;
+    opacity: 0.75;
+    font-size: 0.95rem;
 }
 
 .footer-contact h3,
 .footer-links h3,
-.footer-social h3 {
-    font-size: 1.15rem;
-    margin-bottom: 20px;
+.footer-social-wrapper h3 {
+    font-size: 1.2rem;
+    margin-bottom: 22px;
     position: relative;
     padding-bottom: 8px;
-    border-bottom: 2px solid var(--primary-color);
-    display: inline-block;
+}
+
+.footer-contact h3::after,
+.footer-links h3::after,
+.footer-social-wrapper h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 2px;
+    background-color: var(--accent-color);
 }
 
 .footer-contact p {
@@ -617,89 +697,111 @@ footer {
 .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
-.footer-links a {
-    font-size: 0.95rem;
-    opacity: 0.8;
+.footer-links h3 {
+    margin-bottom: 22px;
 }
 
-.footer-links a:hover {
-    opacity: 1;
-    color: var(--accent-color);
-    padding-left: 5px;
-}
-
-.footer-social {
+.footer-links-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.footer-social a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+.footer-links-list a {
     font-size: 0.95rem;
     opacity: 0.8;
 }
 
-.footer-social a:hover {
+.footer-links-list a:hover {
     opacity: 1;
     color: var(--accent-color);
+    padding-left: 6px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+    transform: translateY(-3px);
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.85rem;
-    opacity: 0.6;
+    padding-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+    opacity: 0.65;
 }
 
 /* ==========================================================================
-   7. FLOATING ACTION BUTTONS (Menu Page)
+   8. FLOATING ACTION BUTTONS (Menu Page Only)
    ========================================================================== */
 .home-btn,
 .call-btn,
 .whatsapp-btn {
     position: fixed;
-    right: 20px;
-    padding: 12px 20px;
+    right: 25px;
+    padding: 12px 22px;
     border-radius: 30px;
     font-weight: 600;
     color: var(--text-light);
     display: flex;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    gap: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
     z-index: 999;
     font-size: 0.9rem;
+    transition: var(--transition);
 }
 
 .home-btn {
-    bottom: 140px;
+    bottom: 145px;
     background-color: var(--primary-color);
 }
 
 .call-btn {
-    bottom: 80px;
+    bottom: 85px;
     background-color: #0078FF; /* Messenger/Phone Blue */
 }
 
 .whatsapp-btn {
-    bottom: 20px;
+    bottom: 25px;
     background-color: #25D366;
 }
 
 .home-btn:hover, .call-btn:hover, .whatsapp-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
 }
 
 /* ==========================================================================
-   8. RESPONSIVE MEDIA QUERIES
+   9. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
+@media (max-width: 992px) {
+    .hero-content h1, .menu-hero-content h1 {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     header .container {
         position: relative;
@@ -717,14 +819,21 @@ footer {
         left: 0;
         width: 100%;
         background-color: var(--bg-light);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        padding: 25px;
         gap: 15px;
+        border-radius: 0 0 16px 16px;
+        border-top: 1px solid var(--border-color);
     }
 
-    /* JavaScript will toggle this class to show menu */
+    /* Active Mobile Nav Trigger class */
     nav ul.active {
         display: flex;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px 15px;
     }
 
     .hero-content h1, .menu-hero-content h1 {
@@ -732,30 +841,35 @@ footer {
     }
 
     .hero-content p, .menu-hero-content p {
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
 
     section {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
+        font-size: 2rem;
+        margin-bottom: 35px;
     }
 
     .menu-category {
-        padding: 15px;
+        padding: 20px;
     }
 
     .menu-table th, .menu-table td {
-        padding: 10px 12px;
-        font-size: 0.9rem;
+        padding: 12px 14px;
+        font-size: 0.95rem;
     }
 
-    /* Pull the floating buttons down on mobile to avoid overlap */
+    /* Move buttons slightly down on mobile to prevent overlapping active page elements */
     .home-btn, .call-btn, .whatsapp-btn {
-        padding: 10px 15px;
+        padding: 10px 16px;
         font-size: 0.8rem;
+        right: 15px;
     }
+    
+    .home-btn { bottom: 125px; }
+    .call-btn { bottom: 75px; }
+    .whatsapp-btn { bottom: 25px; }
 }
