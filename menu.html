@@ -12,16 +12,7 @@
     <meta name="theme-color" content="#8B4513">
     
     <link rel="canonical" href="https://bagdadbreadfactory.github.io/bagdad-bread-factory/menu.html">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Menu | Bagdad Bread Factory & Sweets">
-    <meta property="og:description" content="Fresh bakery products made daily in Chattogram.">
-    <meta property="og:image" content="images/logo.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bagdadbreadfactory.github.io/bagdad-bread-factory/menu.html">
-
     <link rel="icon" href="images/logo.jpg">
-    <link rel="apple-touch-icon" href="images/logo.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +43,7 @@
 </header>
 
 <!-- Menu Hero Section -->
-<section class="menu-hero">
+<section class="menu-hero no-animate">
     <div class="overlay">
         <div class="menu-hero-content">
             <img src="images/logo.jpg" alt="Bagdad Bread Factory Logo" class="menu-logo">
@@ -64,8 +55,8 @@
     </div>
 </section>
 
-<!-- Menu Listings Section -->
-<section class="menu" id="menu">
+<!-- Menu Section -->
+<section class="menu animate-on-scroll" id="menu">
     <div class="container">
         <div class="section-title">
             <h1>Our Bakery Menu</h1>
@@ -74,7 +65,7 @@
 
         <!-- Search Feature -->
         <div class="menu-search">
-            <input type="text" id="menuSearch" placeholder="🔍 Search menu...">
+            <input type="text" id="menuSearch" placeholder="🔍 Search items (e.g., burger, roll, bread)..." autocomplete="off">
         </div>
 
         <!-- Bread Section -->
@@ -187,7 +178,7 @@
                         <td>৳200</td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="text-align:center; font-style: italic;">
+                        <td colspan="2" style="text-align:center; font-style: italic;" class="info-row">
                             More delicious sweets coming soon...
                         </td>
                     </tr>
@@ -207,7 +198,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="2" style="text-align:center; font-style: italic;">
+                        <td colspan="2" style="text-align:center; font-style: italic;" class="info-row">
                             Fresh cakes will be available soon.
                         </td>
                     </tr>
@@ -215,7 +206,7 @@
             </table>
         </div>
 
-        <!-- Call to Action Custom Orders -->
+        <!-- Call to Action -->
         <div class="special-order">
             <h2>🥖 Need a Custom Order?</h2>
             <p>We accept bulk bakery orders for birthdays, weddings, offices, restaurants, and special events.</p>
@@ -224,7 +215,7 @@
             </a>
         </div>
 
-        <!-- Menu Notice Details -->
+        <!-- Menu Notice -->
         <div class="menu-note">
             <h3>📌 Note</h3>
             <ul>
@@ -250,25 +241,35 @@
             <p>📍 Oxygen, Bayezid, Chattogram</p>
             <p>📞 02-41380278</p>
             <p>📱 +8801711063961</p>
-            <p>✉ bagdadbreadfactoryofficial@gmail.com</p>
+            <p>✉ info.bagdadfactory@gmail.com</p>
         </div>
-        <div class="footer-links">
-            <h3>Quick Links</h3>
-            <a href="index.html">🏠 Home</a>
-            <a href="menu.html">🍞 Menu</a>
-            <a href="index.html#gallery">🖼 Gallery</a>
-            <a href="index.html#about">ℹ About</a>
-            <a href="index.html#contact">📞 Contact</a>
-        </div>
-        <div class="footer-social">
+        <div class="footer-social-wrapper">
             <h3>Follow Us</h3>
-            <a href="https://www.facebook.com/profile.php?id=61578745061037" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="https://www.instagram.com/bagdadbreadfactory/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://github.com/BagdadBreadFactory" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=61578745061037" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/bagdadbreadfactory/" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/BagdadBreadFactory" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
     </div>
+
+    <!-- Same Footer Links Setup as Home Page -->
+    <div class="footer-centered-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="menu.html">🍞 Menu</a>
+        <a href="index.html#gallery">🖼 Gallery</a>
+        <a href="index.html#about">ℹ About</a>
+        <a href="index.html#contact">📞 Contact</a>
+    </div>
+
     <div class="footer-bottom">
-        <p>© 1998–2026 Bagdad Bread Factory & Sweets. All Rights Reserved.</p>
+        <p>© 1998–<span id="year">2026</span> Bagdad Bread Factory & Sweets. All Rights Reserved.</p>
     </div>
 </footer>
 
