@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -55,15 +56,15 @@
     </div>
 </section>
 
-<!-- Menu Section -->
-<section class="menu animate-on-scroll" id="menu">
+<!-- Menu Content Container (Bypasses scroll animations to show immediately) -->
+<section class="menu-content-section" id="menu">
     <div class="container">
         <div class="section-title">
             <h1>Our Bakery Menu</h1>
             <p>Quality Bakery Products at Affordable Prices</p>
         </div>
 
-        <!-- Search Feature -->
+        <!-- Search Bar -->
         <div class="menu-search">
             <input type="text" id="menuSearch" placeholder="🔍 Search items (e.g., burger, roll, bread)..." autocomplete="off">
         </div>
@@ -177,8 +178,8 @@
                         <td>Laddu (Per Kg)</td>
                         <td>৳200</td>
                     </tr>
-                    <tr>
-                        <td colspan="2" style="text-align:center; font-style: italic;" class="info-row">
+                    <tr class="info-row">
+                        <td colspan="2" style="text-align:center; font-style: italic;">
                             More delicious sweets coming soon...
                         </td>
                     </tr>
@@ -197,8 +198,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td colspan="2" style="text-align:center; font-style: italic;" class="info-row">
+                    <tr class="info-row">
+                        <td colspan="2" style="text-align:center; font-style: italic;">
                             Fresh cakes will be available soon.
                         </td>
                     </tr>
@@ -259,13 +260,23 @@
         </div>
     </div>
 
-    <!-- Same Footer Links Setup as Home Page -->
+    <!-- Centered Links Layout with Embedded Custom Mini Branding Image -->
     <div class="footer-centered-links">
-        <a href="index.html">🏠 Home</a>
-        <a href="menu.html">🍞 Menu</a>
-        <a href="index.html#gallery">🖼 Gallery</a>
-        <a href="index.html#about">ℹ About</a>
-        <a href="index.html#contact">📞 Contact</a>
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="" class="footer-link-mini-logo"> Home
+        </a>
+        <a href="menu.html">
+            <img src="images/logo.jpg" alt="" class="footer-link-mini-logo"> Menu
+        </a>
+        <a href="index.html#gallery">
+            <img src="images/logo.jpg" alt="" class="footer-link-mini-logo"> Gallery
+        </a>
+        <a href="index.html#about">
+            <img src="images/logo.jpg" alt="" class="footer-link-mini-logo"> About
+        </a>
+        <a href="index.html#contact">
+            <img src="images/logo.jpg" alt="" class="footer-link-mini-logo"> Contact
+        </a>
     </div>
 
     <div class="footer-bottom">
