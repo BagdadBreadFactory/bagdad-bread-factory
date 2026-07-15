@@ -168,9 +168,11 @@ nav ul li a.active {
 
 .menu-hero {
     background: linear-gradient(rgba(46, 37, 32, 0.75), rgba(46, 37, 32, 0.75)), url('images/menu-hero.jpg') no-repeat center center/cover;
-    height: 50vh;
+    min-height: 45vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .overlay {
@@ -415,21 +417,19 @@ section h2::after {
     opacity: 0.85;
 }
 
-/* ==========================================================================
-   DEVELOPER LAYOUT: CONTACT SECTION TWO-ROW DESIGN
-   ========================================================================== */
+/* Contact: Two-Row Developer Grid (Last Box Centered Below) */
 .contact {
     background-color: var(--text-light);
 }
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Set baseline grid framework */
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
 
 .contact-item {
-    grid-column: span 2; /* Forces items to take up half width (Two per row) */
+    grid-column: span 2;
     text-align: center;
     padding: 30px 20px;
     background: var(--bg-light);
@@ -451,14 +451,22 @@ section h2::after {
     margin-bottom: 10px;
 }
 
-/* Centered 5th item targeting logic */
 .contact-item.last-center {
-    grid-column: 2 / span 2; /* Offsets column start position to sit center */
+    grid-column: 2 / span 2;
 }
 
 /* ==========================================================================
-   6. MENU PAGE SPECIFICS
+   6. MENU PAGE CONTENT LAYOUT (Guarantees Instant Load Visibility)
    ========================================================================== */
+.menu-content-section {
+    padding: 60px 0;
+    background-color: var(--bg-light);
+    display: block;
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 40px;
@@ -627,7 +635,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   7. DEVELOPER LAYOUT: CENTERED FOOTER DESIGN
+   7. FOOTER GRID & DOWN LINK BRANDING LOGOS
    ========================================================================== */
 footer {
     background-color: var(--bg-dark);
@@ -635,7 +643,6 @@ footer {
     padding: 60px 0 30px 0;
 }
 
-/* Upper Footer Grid (Brand, Details, Socials) */
 .footer-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -712,12 +719,12 @@ footer {
     transform: translateY(-3px);
 }
 
-/* New Navigation Placement Block */
+/* Centered Quick Links Row with Mini Logos Embedded Inline */
 .footer-centered-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
@@ -725,14 +732,32 @@ footer {
 .footer-centered-links a {
     font-size: 0.95rem;
     font-weight: 500;
-    opacity: 0.75;
-    position: relative;
-    padding: 4px 0;
+    opacity: 0.85;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.footer-link-mini-logo {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--accent-color);
+    display: inline-block;
 }
 
 .footer-centered-links a:hover {
     opacity: 1;
     color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
 }
 
 .footer-bottom {
@@ -818,7 +843,7 @@ footer {
         font-size: 2rem;
     }
 
-    /* Fallback layout to force single column alignment on mobile viewports */
+    /* Standard Single Column Stack Fallback for Phone Displays */
     .contact-info {
         display: flex;
         flex-direction: column;
@@ -831,7 +856,12 @@ footer {
     }
 
     .footer-centered-links {
-        gap: 15px 25px;
+        gap: 10px;
+    }
+    
+    .footer-centered-links a {
+        font-size: 0.85rem;
+        padding: 5px 12px;
     }
 
     section { padding: 50px 0; }
