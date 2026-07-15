@@ -1042,6 +1042,129 @@ header.sticky{
 
 }
 
+
+
+/* ==========================
+   BUTTON
+========================== */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:14px 35px;
+
+    background:#8B4513;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#6E3510;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================
+   ACTIVE MENU
+========================== */
+
+nav ul li a.active{
+
+    color:#8B4513;
+
+    font-weight:700;
+
+    border-bottom:3px solid #8B4513;
+
+}
+
+/* ==========================
+   MENU LOGO
+========================== */
+
+.menu-logo{
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #fff;
+
+    margin-bottom:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#FFF5E8;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#8B4513;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#6E3510;
+
+}
+
+/* ==========================
+   SMOOTH SCROLL
+========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==========================
    MENU HERO
 ========================== */
@@ -1092,7 +1215,57 @@ header.sticky{
 
     font-size:22px;
 
+    margin-bottom:10px;
+
+}
+
+.menu-hero-content .since{
+
+    font-size:18px;
+
+    font-weight:500;
+
+    color:#FFD700;
+
     margin-bottom:30px;
+
+}
+
+/* ==========================
+   MENU PAGE
+========================== */
+
+.menu{
+
+    background:#FFF8F0;
+
+    padding:80px 20px;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.section-title h1{
+
+    font-size:48px;
+
+    color:#8B4513;
+
+    margin-bottom:10px;
+
+}
+
+.section-title p{
+
+    color:#666;
+
+    font-size:18px;
 
 }
 
@@ -1130,11 +1303,15 @@ header.sticky{
 
 .menu-search input:focus{
 
-    border-color:#d97706;
+    border-color:#D97706;
 
     box-shadow:0 0 15px rgba(217,119,6,.2);
 
 }
+
+
+
+
 
 /* ==========================
    MENU CATEGORY
@@ -1142,7 +1319,7 @@ header.sticky{
 
 .menu-category{
 
-    background:#ffffff;
+    background:#fff;
 
     border-radius:18px;
 
@@ -1188,6 +1365,8 @@ header.sticky{
 
     border-collapse:collapse;
 
+    background:#fff;
+
 }
 
 .menu-table thead{
@@ -1200,9 +1379,11 @@ header.sticky{
 
     padding:18px;
 
+    color:#8B4513;
+
     font-size:18px;
 
-    color:#8B4513;
+    font-weight:700;
 
     text-transform:uppercase;
 
@@ -1230,9 +1411,9 @@ header.sticky{
 
 .menu-table td:first-child{
 
-    color:#333;
-
     font-weight:500;
+
+    color:#333;
 
 }
 
@@ -1244,17 +1425,40 @@ header.sticky{
 
     color:#D97706;
 
-    font-size:18px;
-
 }
-
-/* Last Row */
 
 .menu-table tbody tr:last-child td{
 
     border-bottom:none;
 
 }
+
+/* ==========================
+   TABLE RESPONSIVE
+========================== */
+
+.menu-table{
+
+    overflow-x:auto;
+
+}
+
+.menu-table th:first-child,
+
+.menu-table td:first-child{
+
+    text-align:left;
+
+}
+
+.menu-table th:last-child,
+
+.menu-table td:last-child{
+
+    text-align:right;
+
+}
+
 
 /* ==========================
    SPECIAL ORDER
@@ -1298,8 +1502,6 @@ header.sticky{
 
 }
 
-/* WhatsApp Button */
-
 .order-btn{
 
     display:inline-block;
@@ -1331,20 +1533,20 @@ header.sticky{
 }
 
 /* ==========================
-   CUSTOMER NOTE
+   MENU NOTE
 ========================== */
 
 .menu-note{
 
     background:#fff;
 
-    border-radius:40px;
+    border-radius:20px;
 
     padding:35px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
     margin-bottom:60px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
 
@@ -1386,7 +1588,7 @@ header.sticky{
 
 .home-btn,
 .call-btn,
-{
+.whatsapp-btn{
 
     position:fixed;
 
@@ -1517,15 +1719,47 @@ header.sticky{
     .call-btn,
     .whatsapp-btn{
 
-        width:58px;
+        width:140px;
 
-        height:58px;
+        padding:12px 18px;
 
-        padding:0;
+        font-size:16px;
 
-        border-radius:50%;
+        border-radius:40px;
 
-        font-size:22px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .menu-hero-content h1{
+
+        font-size:30px;
+
+    }
+
+    .menu-hero-content p{
+
+        font-size:16px;
+
+    }
+
+    .menu-search input{
+
+        font-size:15px;
+
+    }
+
+    .home-btn,
+    .call-btn,
+    .whatsapp-btn{
+
+        left:10px;
+
+        width:120px;
+
+        font-size:14px;
 
     }
 
