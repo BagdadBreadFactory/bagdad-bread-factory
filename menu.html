@@ -1,626 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Bakery Menu | Bagdad Bread Factory & Sweets | Chattogram</title>
 
-    <meta name="description"
-        content="Browse the official menu of Bagdad Bread Factory & Sweets. Fresh bread, burgers, pizza, snacks, cakes and sweets in Chattogram, Bangladesh. Since 1998.">
-
-    <meta name="keywords"
-        content="Bagdad Bread Factory, Bakery Menu, Bread, Burger, Pizza, Cakes, Sweets, Chattogram, Bangladesh">
-
-    <meta name="author"
-        content="Bagdad Bread Factory & Sweets">
-
+    <meta name="description" content="Browse the official menu of Bagdad Bread Factory & Sweets. Fresh bread, burgers, pizza, snacks, cakes and sweets in Chattogram, Bangladesh. Since 1998.">
+    <meta name="keywords" content="Bagdad Bread Factory, Bakery Menu, Bread, Burger, Pizza, Cakes, Sweets, Chattogram, Bangladesh">
+    <meta name="author" content="Bagdad Bread Factory & Sweets">
     <meta name="robots" content="index, follow">
-
     <meta name="theme-color" content="#8B4513">
-
-    <link rel="canonical"
-        href="https://bagdadbreadfactory.github.io/bagdad-bread-factory/menu.html">
+    
+    <link rel="canonical" href="https://bagdadbreadfactory.github.io/bagdad-bread-factory/menu.html">
 
     <!-- Open Graph -->
-
-    <meta property="og:title"
-        content="Menu | Bagdad Bread Factory & Sweets">
-
-    <meta property="og:description"
-        content="Fresh bakery products made daily in Chattogram.">
-
-    <meta property="og:image"
-        content="images/logo.jpg">
-
-    <meta property="og:type"
-        content="website">
-
-    <meta property="og:url"
-        content="https://bagdadbreadfactory.github.io/bagdad-bread-factory/menu.html">
+    <meta property="og:title" content="Menu | Bagdad Bread Factory & Sweets">
+    <meta property="og:description" content="Fresh bakery products made daily in Chattogram.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bagdadbreadfactory.github.io/bagdad-bread-factory/menu.html">
 
     <link rel="icon" href="images/logo.jpg">
-
     <link rel="apple-touch-icon" href="images/logo.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
-
-
-
-<!-- ================= HEADER ================= -->
+<body>
 
 <header>
-
     <div class="container">
-
         <div class="logo">
-
             <a href="index.html">
-
-                <img src="images/logo.jpg"
-                     alt="Bagdad Bread Factory Logo">
-
+                <img src="images/logo.jpg" alt="Bagdad Bread Factory Logo">
             </a>
-
             <h2>Bagdad Bread Factory & Sweets</h2>
-
         </div>
-
         <nav>
-
-            <ul>
-
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
-
                 <li><a href="menu.html" class="active">Menu</a></li>
-
                 <li><a href="index.html#gallery">Gallery</a></li>
-
                 <li><a href="index.html#about">About</a></li>
-
                 <li><a href="index.html#contact">Contact</a></li>
-
             </ul>
-
         </nav>
-
     </div>
-
 </header>
 
-
-
-<!-- ================= MENU HERO ================= -->
-
+<!-- Menu Hero Section -->
 <section class="menu-hero">
-
     <div class="overlay">
-
         <div class="menu-hero-content">
-
-            <img src="images/logo.jpg"
-                 alt="Bagdad Bread Factory Logo"
-                 class="menu-logo">
-
+            <img src="images/logo.jpg" alt="Bagdad Bread Factory Logo" class="menu-logo">
             <h1>Bagdad Bread Factory & Sweets</h1>
-
-            <p>
-
-                Fresh Bread • Fast Food • Cakes • Sweets
-
-            </p>
-
-            <p class="since">
-
-                Since 1998
-
-            </p>
-
-            <a href="#bread" class="btn">
-
-                View Menu
-
-            </a>
-
+            <p>Fresh Bread • Fast Food • Cakes • Sweets</p>
+            <p class="since">Since 1998</p>
+            <a href="#menu" class="btn">View Menu</a>
         </div>
-
     </div>
-
 </section>
 
-<!-- ================= MENU ================= -->
-
+<!-- Menu Listings Section -->
 <section class="menu" id="menu">
-
-<div class="container">
-
-<div class="section-title">
-
-<h1>🍞 Our Bakery Menu</h1>
-
-<p>
-
-Quality Bakery Products at Affordable Prices
-
-</p>
-
-</div>
-
-<!-- Search -->
-
-<div class="menu-search">
-
-<input
-
-type="text"
-
-id="menuSearch"
-
-placeholder="🔍 Search menu...">
-
-</div>
-<!-- ================= HERO ================= -->
-
-<section class="menu-hero">
-
-    <div class="overlay">
-
-        <div class="menu-hero-content">
-
-            <h1>🍞Bakery Menu</h1>
-
-            <p>
-
-                 Since 1998
-
-            </p>
-
-            <a href="#menu" class="btn">
-
-                View Menu
-
-            </a>
-
+    <div class="container">
+        <div class="section-title">
+            <h1>Our Bakery Menu</h1>
+            <p>Quality Bakery Products at Affordable Prices</p>
         </div>
 
-    </div>
-
-</section>
-
-
+        <!-- Search Feature -->
+        <div class="menu-search">
+            <input type="text" id="menuSearch" placeholder="🔍 Search menu...">
+        </div>
 
         <!-- Bread Section -->
-
-        <div class="menu-category">
-
+        <div class="menu-category" id="bread">
             <h2>🍞 Bread</h2>
-
             <table class="menu-table">
-
                 <thead>
-
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
                     </tr>
-
                 </thead>
-
                 <tbody>
-
                     <tr>
                         <td>Bread</td>
                         <td>৳60</td>
                     </tr>
-
                     <tr>
                         <td>Milk Bread</td>
                         <td>৳80</td>
                     </tr>
-
                     <tr>
                         <td>Toast Bread</td>
                         <td>৳90</td>
                     </tr>
-
                 </tbody>
-
             </table>
-
         </div>
 
         <!-- Fast Food Section -->
-
         <div class="menu-category">
-
             <h2>🍔 Fast Food</h2>
-
             <table class="menu-table">
-
                 <thead>
-
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
                     </tr>
-
                 </thead>
-
                 <tbody>
-
                     <tr>
                         <td>Chicken Burger</td>
                         <td>৳60</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Fry</td>
                         <td>৳30</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Roll</td>
                         <td>৳25</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Toast</td>
                         <td>৳35</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Samosa (Chomuha)</td>
                         <td>৳10</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Sandwich</td>
                         <td>৳30</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Kabab</td>
                         <td>৳50</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Sashlik</td>
                         <td>৳30</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Chop Burger</td>
                         <td>৳30</td>
                     </tr>
-
                     <tr>
                         <td>Chicken Bun</td>
                         <td>৳25</td>
                     </tr>
-
                     <tr>
                         <td>Egg Chop (Dim Chop)</td>
                         <td>৳15</td>
                     </tr>
-
                     <tr>
                         <td>Pizza</td>
                         <td>৳60</td>
                     </tr>
-
                     <tr>
                         <td>Hot Dog</td>
                         <td>৳30</td>
                     </tr>
-
                 </tbody>
-
             </table>
-
         </div>
 
         <!-- Sweets Section -->
-
         <div class="menu-category">
-
             <h2>🍬 Sweets</h2>
-
             <table class="menu-table">
-
                 <thead>
-
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
                     </tr>
-
                 </thead>
-
                 <tbody>
-
                     <tr>
                         <td>Laddu (Per Kg)</td>
                         <td>৳200</td>
                     </tr>
-
                     <tr>
-                        <td colspan="2" style="text-align:center;">
+                        <td colspan="2" style="text-align:center; font-style: italic;">
                             More delicious sweets coming soon...
                         </td>
                     </tr>
-
                 </tbody>
-
             </table>
-
         </div>
 
-
         <!-- Cakes Section -->
-
         <div class="menu-category">
-
             <h2>🎂 Cakes</h2>
-
             <table class="menu-table">
-
                 <thead>
-
                     <tr>
                         <th>Product</th>
                         <th>Price</th>
                     </tr>
-
                 </thead>
-
                 <tbody>
-
                     <tr>
-                        <td colspan="2" style="text-align:center;">
+                        <td colspan="2" style="text-align:center; font-style: italic;">
                             Fresh cakes will be available soon.
                         </td>
                     </tr>
-
                 </tbody>
-
             </table>
-
         </div>
 
-
-
-
-
-
-    <!-- ================= CONTACT CARD ================= -->
-
-<div class="special-order">
-
-    <h2>🥖 Order Fresh Bakery Products Today!</h2>
-
-    <p>
-
-        Fresh Bread, Fast Food, Cakes & Sweets are available every day.
-
-    </p>
-
-    <a href="https://wa.me/8801711063961"
-       target="_blank"
-       class="order-btn">
-
-        📱 Order on WhatsApp
-
-    </a>
-
-</div>
-
-<!-- ================= CUSTOMER NOTICE ================= -->
-
-<div class="menu-note">
-
-    <h3>📌 Customer Notice</h3>
-
-    <ul>
-
-        <li>✔ Fresh products prepared daily.</li>
-
-        <li>✔ Prices may change without prior notice.</li>
-
-        <li>✔ Bulk orders are accepted.</li>
-
-        <li>✔ Birthday & Wedding cake orders available.</li>
-
-        <li>✔ Thank you for choosing Bagdad Bread Factory & Sweets.</li>
-
-    </ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-
+        <!-- Call to Action Custom Orders -->
         <div class="special-order">
-
             <h2>🥖 Need a Custom Order?</h2>
-
-            <p>
-                We accept bulk bakery orders for birthdays, weddings,
-                offices, restaurants and special events.
-            </p>
-
-            <a href="https://wa.me/8801711063961"
-               target="_blank"
-               class="order-btn">
-               📱 Order on WhatsApp
+            <p>We accept bulk bakery orders for birthdays, weddings, offices, restaurants, and special events.</p>
+            <a href="https://wa.me/8801711063961" target="_blank" rel="noopener noreferrer" class="order-btn">
+                📱 Order on WhatsApp
             </a>
-
         </div>
 
-
-        <!-- Menu Note -->
-
+        <!-- Menu Notice Details -->
         <div class="menu-note">
-
             <h3>📌 Note</h3>
-
             <ul>
-
                 <li>✔ Prices may change without prior notice.</li>
-
                 <li>✔ Fresh bakery products are prepared every day.</li>
-
                 <li>✔ New products are added regularly.</li>
-
                 <li>✔ For bulk orders, please contact us by phone or WhatsApp.</li>
-
             </ul>
-
         </div>
-
     </div>
-
 </section>
 
-
-
-
-
-
-<!-- ================= FOOTER ================= -->
-
+<!-- Footer -->
 <footer>
-
     <div class="container footer-container">
-
-        <!-- Logo -->
-
         <div class="footer-logo">
-
-            <img src="images/logo.jpg"
-                 alt="Bagdad Bread Factory Logo">
-
+            <img src="images/logo.jpg" alt="Bagdad Bread Factory Logo">
             <h2>Bagdad Bread Factory & Sweets</h2>
-
             <p>Since 1998</p>
-
         </div>
-
-        <!-- Contact -->
-
         <div class="footer-contact">
-
             <h3>Contact Us</h3>
-
             <p>📍 Oxygen, Bayezid, Chattogram</p>
-
             <p>📞 02-41380278</p>
-
             <p>📱 +8801711063961</p>
-
             <p>✉ bagdadbreadfactoryofficial@gmail.com</p>
-
         </div>
-
-        <!-- Quick Links -->
-
         <div class="footer-links">
-
             <h3>Quick Links</h3>
-
             <a href="index.html">🏠 Home</a>
-
             <a href="menu.html">🍞 Menu</a>
-
             <a href="index.html#gallery">🖼 Gallery</a>
-
             <a href="index.html#about">ℹ About</a>
-
             <a href="index.html#contact">📞 Contact</a>
-
         </div>
-
-        <!-- Social -->
-
         <div class="footer-social">
-
             <h3>Follow Us</h3>
-
-            <a href="https://www.facebook.com/profile.php?id=61578745061037"
-               target="_blank">
-
-                Facebook
-
-            </a>
-
-            <a href="https://www.instagram.com/bagdadbreadfactory/"
-               target="_blank">
-
-                Instagram
-
-            </a>
-
-            <a href="https://github.com/BagdadBreadFactory"
-               target="_blank">
-
-                GitHub
-
-            </a>
-
+            <a href="https://www.facebook.com/profile.php?id=61578745061037" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/bagdadbreadfactory/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://github.com/BagdadBreadFactory" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-
     </div>
-
     <div class="footer-bottom">
-
-        <p>
-
-            © 1998–2026 Bagdad Bread Factory & Sweets.
-            All Rights Reserved.
-
-        </p>
-
+        <p>© 1998–2026 Bagdad Bread Factory & Sweets. All Rights Reserved.</p>
     </div>
-
 </footer>
 
-<!-- Floating Buttons -->
-
-<a href="index.html" class="home-btn">
-
-🏠 Home
-
-</a>
-
-<a href="tel:0241380278"
-class="call-btn">
-
-📞 Call
-
-</a>
-
-<a href="https://wa.me/8801711063961"
-class="whatsapp-btn"
-target="_blank">
-
-💬 WhatsApp
-
-</a>
+<!-- Floating Action Buttons -->
+<a href="index.html" class="home-btn">🏠 Home</a>
+<a href="tel:0241380278" class="call-btn">📞 Call</a>
+<a href="https://wa.me/8801711063961" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
 
 <script src="script.js"></script>
-
 </body>
-
 </html>
