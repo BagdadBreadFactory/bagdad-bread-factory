@@ -9,7 +9,7 @@ Please do not create a public GitHub issue for security-related problems.
 Instead, contact us using the following email:
 
 **Email:** bagdadbreadfactoryofficial@gmail.com
-           info.bagdadfactory@gmail.com
+            / info.bagdadfactory@gmail.com
 
 Please include:
 - A description of the vulnerability
