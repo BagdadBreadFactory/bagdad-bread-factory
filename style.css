@@ -774,21 +774,37 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(46, 37, 32, 0.25);
     z-index: 999;
     font-size: 0.85rem;
     transition: var(--transition);
 }
 
-.home-btn { bottom: 135px; background-color: var(--primary-color); }
-.call-btn { bottom: 80px; background-color: var(--primary-color); }
-.whatsapp-btn { bottom: 25px; background-color: var(--primary-color); }
+.home-btn,
+.call-btn,
+.whatsapp-btn {
+ 
+  background: linear-gradient(135deg, #231914, #362820);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+}
+
+.home-btn { bottom: 135px; }
+.call-btn { bottom: 80px; }
+.whatsapp-btn { bottom: 25px; }
+
+
+.home-btn:hover, 
+.call-btn:hover, 
+.whatsapp-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-dark);
+}
 
 .home-btn:hover, .call-btn:hover, .whatsapp-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
-
 
 @media (max-width: 992px) {
     .hero-content h1, .menu-hero-content h1 {
