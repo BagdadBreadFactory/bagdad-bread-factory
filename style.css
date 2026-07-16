@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. VARIABLES & BASE RESETS
-   ========================================================================== */
+
 :root {
     --primary-color: #8B4513;
     --primary-light: #A0522D;
@@ -58,9 +56,7 @@ ul {
     width: 100%;
 }
 
-/* ==========================================================================
-   2. SCROLL ANIMATION STATES
-   ========================================================================== */
+
 section.hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -77,9 +73,7 @@ section.show {
     transform: none !important;
 }
 
-/* ==========================================================================
-   3. HEADER & NAVIGATION
-   ========================================================================== */
+
 header {
     background-color: rgba(253, 251, 247, 0.95);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -156,9 +150,7 @@ nav ul li a.active {
     transition: var(--transition);
 }
 
-/* ==========================================================================
-   4. HERO SECTIONS
-   ========================================================================== */
+
 .hero {
     background: linear-gradient(rgba(46, 37, 32, 0.65), rgba(46, 37, 32, 0.65)), url('images/hero.jpg') no-repeat center center/cover;
     height: 80vh;
@@ -272,9 +264,7 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   5. SECTIONS GENERAL
-   ========================================================================== */
+
 section {
     padding: 80px 0;
 }
@@ -298,7 +288,7 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* Features */
+
 .features {
     background-color: var(--text-light);
 }
@@ -330,7 +320,7 @@ section h2::after {
     margin-bottom: 12px;
 }
 
-/* About */
+
 .about {
     background-color: var(--bg-light);
 }
@@ -344,7 +334,7 @@ section h2::after {
     line-height: 1.8;
 }
 
-/* Gallery */
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -384,7 +374,7 @@ section h2::after {
     font-weight: 600;
 }
 
-/* Stats */
+
 .stats {
     background-color: var(--bg-dark);
     color: var(--text-light);
@@ -417,7 +407,7 @@ section h2::after {
     opacity: 0.85;
 }
 
-/* Contact: Two-Row Developer Grid (Last Box Centered Below) */
+
 .contact {
     background-color: var(--text-light);
 }
@@ -455,9 +445,7 @@ section h2::after {
     grid-column: 2 / span 2;
 }
 
-/* ==========================================================================
-   6. MENU PAGE CONTENT LAYOUT (Guarantees Instant Load Visibility)
-   ========================================================================== */
+
 .menu-content-section {
     padding: 60px 0;
     background-color: var(--bg-light);
@@ -634,9 +622,7 @@ section h2::after {
     color: var(--text-dark);
 }
 
-/* ==========================================================================
-   7. FOOTER GRID & DOWN LINK BRANDING LOGOS
-   ========================================================================== */
+
 footer {
     background-color: var(--bg-dark);
     color: var(--text-light);
@@ -708,13 +694,13 @@ footer {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.09); /* Slightly increased visibility */
-    color: var(--text-light);                    /* FIX: Force white icons inside footer */
+    background-color: rgba(255, 255, 255, 0.09);
+    color: var(--text-light);                  
     font-size: 1rem;
     transition: var(--transition);
 }
 
-/* FIX: If icons render inline inside SVGs, this forces them to match the link color */
+
 .footer-social a svg {
     fill: currentColor;
     width: 16px;
@@ -727,7 +713,7 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Centered Quick Links Row with Mini Logos Embedded Inline */
+
 .footer-centered-links {
     display: flex;
     justify-content: center;
@@ -748,7 +734,7 @@ footer {
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--text-light);                    /* FIX: Force link text visibility */
+    color: var(--text-light);                  
     transition: var(--transition);
 }
 
@@ -775,9 +761,7 @@ footer {
     opacity: 0.6;
 }
 
-/* ==========================================================================
-   8. FLOATING ACTION BUTTONS
-   ========================================================================== */
+
 .home-btn,
 .call-btn,
 .whatsapp-btn {
@@ -805,9 +789,7 @@ footer {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* ==========================================================================
-   9. RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
+
 @media (max-width: 992px) {
     .hero-content h1, .menu-hero-content h1 {
         font-size: 2.6rem;
@@ -852,7 +834,7 @@ footer {
         font-size: 2rem;
     }
 
-    /* Standard Single Column Stack Fallback for Phone Displays */
+   
     .contact-info {
         display: flex;
         flex-direction: column;
