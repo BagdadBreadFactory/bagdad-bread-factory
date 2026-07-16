@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // ==========================================================================
-    // 1. MOBILE NAV TOGGLE
-    // ==========================================================================
+  
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
 
@@ -12,9 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================================
-    // 2. SMOOTH SCROLLING WITH MOBILE AUTO-CLOSE
-    // ==========================================================================
+   
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             const targetId = this.getAttribute("href");
@@ -33,9 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // ==========================================================================
-    // 3. STICKY HEADER ON SCROLL
-    // ==========================================================================
+   
     const header = document.querySelector("header");
     if (header) {
         window.addEventListener("scroll", () => {
@@ -47,9 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================================
-    // 4. SCROLL ANIMATION FOR SECTIONS
-    // ==========================================================================
+  
     const animatedSections = document.querySelectorAll("section.animate-on-scroll");
     
     if (animatedSections.length > 0) {
@@ -71,9 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================================
-    // 5. ANIMATED STATS COUNTER
-    // ==========================================================================
+   
     const counters = document.querySelectorAll(".stat-card h2");
     if (counters.length > 0) {
         const counterObserver = new IntersectionObserver(
@@ -121,17 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // ==========================================================================
-    // 6. DYNAMIC CURRENT YEAR FOR FOOTER
-    // ==========================================================================
+    
     const yearElement = document.getElementById("year");
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
 
-    // ==========================================================================
-    // 7. DEVELOPER UPGRADE: FUZZY & INTELLIGENT MATCH MENU SEARCH
-    // ==========================================================================
+  
     const searchInput = document.getElementById("menuSearch");
     if (searchInput) {
         searchInput.addEventListener("input", function () {
@@ -151,10 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const productName = row.cells[0].innerText.toLowerCase();
                     
-                    // Intelligent multi-matching condition:
-                    // 1. Direct structural inclusion match
-                    // 2. Head-string character matches (e.g. typing "ch" highlights "chicken roll")
-                    // 3. Simple space-separated cross-matching keywords
+                   
                     const isDirectMatch = productName.includes(query);
                     const isPrefixMatch = productName.startsWith(query);
                     const isFuzzyMatch = query.split(" ").every(word => productName.includes(word));
@@ -167,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
-                // If zero active food matches remain inside this card, hide the parent section cleanly
+               
                 if (query !== "" && visibleRowsInSubGrid === 0) {
                     category.classList.add("hide-category");
                 } else {
