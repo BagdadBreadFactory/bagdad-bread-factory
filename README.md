@@ -12,7 +12,6 @@ A modern bakery website built with:
 - Mobile Menu
 - WhatsApp Button
 - Call Button
-- Google Maps
 - Gallery
 - Reviews
 - Statistics
