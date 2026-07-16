@@ -781,8 +781,8 @@ footer {
 }
 
 .home-btn { bottom: 135px; background-color: var(--primary-color); }
-.call-btn { bottom: 80px; background-color: #0078FF; }
-.whatsapp-btn { bottom: 25px; background-color: #25D366; }
+.call-btn { bottom: 80px; background-color: var(--primary-color); }
+.whatsapp-btn { bottom: 25px; background-color: var(--primary-color); }
 
 .home-btn:hover, .call-btn:hover, .whatsapp-btn:hover {
     transform: translateY(-3px);
