@@ -1,5 +1,17 @@
+# ===================================================
+# Robots.txt for Bagdad Bread Factory & Sweets
+# Website: https://bagdadbreadfactory.github.io/
+# ===================================================
+
+# Apply rules to all web crawlers (Google, Bing, Yahoo, etc.)
 User-agent: *
 
+# Allow full site crawling
 Allow: /
 
+# Disallow administrative, private, or draft directories (if applicable in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# XML Sitemap location for search engine indexing
 Sitemap: https://bagdadbreadfactory.github.io/sitemap.xml
