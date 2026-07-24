@@ -1,7 +1,6 @@
-# ===================================================
+
 # Robots.txt for Bagdad Bread Factory & Sweets
 # Website: https://bagdadbreadfactory.github.io/
-# ===================================================
 
 # Apply rules to all web crawlers (Google, Bing, Yahoo, etc.)
 User-agent: *
