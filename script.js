@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
-  
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
 
@@ -10,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-   
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             const targetId = this.getAttribute("href");
@@ -29,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-   
     const header = document.querySelector("header");
     if (header) {
         window.addEventListener("scroll", () => {
@@ -41,9 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-  
     const animatedSections = document.querySelectorAll("section.animate-on-scroll");
-    
     if (animatedSections.length > 0) {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -58,12 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         animatedSections.forEach(section => {
-            section.classList.add("hidden");
             observer.observe(section);
         });
     }
 
-   
     const counters = document.querySelectorAll(".stat-card h2");
     if (counters.length > 0) {
         const counterObserver = new IntersectionObserver(
@@ -111,13 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    
-    const yearElement = document.getElementById("year");
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-
-  
     const searchInput = document.getElementById("menuSearch");
     if (searchInput) {
         searchInput.addEventListener("input", function () {
@@ -129,15 +114,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 let visibleRowsInSubGrid = 0;
 
                 rows.forEach(row => {
-                    // Bypass checking notification details or text-only updates
                     if (row.classList.contains("info-row") || row.cells.length < 2) {
                         row.style.display = "";
                         return;
                     }
 
                     const productName = row.cells[0].innerText.toLowerCase();
-                    
-                   
                     const isDirectMatch = productName.includes(query);
                     const isPrefixMatch = productName.startsWith(query);
                     const isFuzzyMatch = query.split(" ").every(word => productName.includes(word));
@@ -150,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
-               
                 if (query !== "" && visibleRowsInSubGrid === 0) {
                     category.classList.add("hide-category");
                 } else {
