@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeAnnouncement = document.getElementById('closeAnnouncement');
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-    // 1. Announcement bar close
+
     if (closeAnnouncement && announcementBar) {
         closeAnnouncement.addEventListener('click', () => {
             announcementBar.style.display = 'none';
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Sticky header & scroll state
+  
     window.addEventListener('scroll', () => {
         if (window.scrollY > 40) {
             siteHeader.classList.add('scrolled');
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Dark mode toggle
+    
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     if (themeToggleBtn) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Mobile Navigation
+    
     if (hamburgerBtn && navMenu) {
         hamburgerBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Store Live Status Badge (7:00 AM - 11:00 PM)
+  
     const storeStatusBadge = document.getElementById('storeStatusBadge');
     if (storeStatusBadge) {
         const checkStoreStatus = () => {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(checkStoreStatus, 60000);
     }
 
-    // 6. Interactive Price Estimator
+
     const estCategory = document.getElementById('estCategory');
     const estQuantity = document.getElementById('estQuantity');
     const estResult = document.getElementById('estResult');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 7. FAQ Accordion
+
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 8. Menu Search & Filtering
+
     const filterBtns = document.querySelectorAll('.filter-btn');
     const categoryCards = document.querySelectorAll('.menu-category-card');
 
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. Interactive Shopping Cart & WhatsApp Checkout
+
     let cart = JSON.parse(localStorage.getItem('bagdad_cart')) || [];
     const cartToggleBtn = document.getElementById('cartToggleBtn');
     const cartDrawer = document.getElementById('cartDrawer');
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCartUI();
 
-    // 10. Interactive Gallery Lightbox
+  
     const lightboxModal = document.getElementById('lightboxModal');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCaption = document.getElementById('lightboxCaption');
@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 11. Interactive Review Modal & Submission
+    
     const openReviewModalBtn = document.getElementById('openReviewModalBtn');
     const reviewModal = document.getElementById('reviewModal');
     const closeReviewModal = document.getElementById('closeReviewModal');
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 12. Scroll reveal animation observer
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
