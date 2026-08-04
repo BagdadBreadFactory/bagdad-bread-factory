@@ -376,7 +376,8 @@ header.scrolled {
     line-height: 1.15;
     margin-bottom: 20px;
     color: var(--white);
-    text-transform: lowercase;
+    text-transform: uppercase;
+
 }
 
 .hero-description {
