@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
 
 <div id="announcement-bar">
     <div class="announcement-container">
-        <p><i class="fas fa-bullhorn"></i> Special Festive Sweets Pre-Booking Open Now! Call <a href="tel:0241380278">02-41380278</a></p>
+        <p><i class="fas fa-bullhorn"></i> <span data-i18n="announcement-text">Special Festive Sweets Pre-Booking Open Now! Call</span> <a href="tel:0241380278">02-41380278</a></p>
         <button id="closeAnnouncement" aria-label="Close Announcement"><i class="fas fa-times"></i></button>
     </div>
 </div>
@@ -32,21 +32,29 @@
             <img src="images/logo.jpg" alt="Bagdad Bread Factory Logo">
             <div class="brand-info">
                 <h1>Bagdad Bread Factory</h1>
-                <span>& Sweets</span>
+                <span data-i18n="brand-sub">& Sweets</span>
             </div>
         </a>
         <nav class="nav-menu" id="navMenu">
             <ul>
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="index.html#features" class="nav-link">Why Us</a></li>
-                <li><a href="index.html#about" class="nav-link">About Us</a></li>
-                <li><a href="menu.html" class="nav-link active">Our Menu</a></li>
-                <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav-home">Home</a></li>
+                <li><a href="index.html#features" class="nav-link" data-i18n="nav-why">Why Us</a></li>
+                <li><a href="index.html#about" class="nav-link" data-i18n="nav-about">About Us</a></li>
+                <li><a href="menu.html" class="nav-link active" data-i18n="nav-menu">Our Menu</a></li>
+                <li><a href="index.html#gallery" class="nav-link" data-i18n="nav-gallery">Gallery</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
             </ul>
         </nav>
         <div class="header-actions">
-      
+            <!-- Language Switcher Dropdown -->
+            <div class="language-selector-wrapper">
+                <select id="languageSelect" aria-label="Select Language" class="language-dropdown">
+                    <option value="en" selected>English</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+
             <button id="cartToggleBtn" class="cart-toggle-btn" title="View Cart">
                 <i class="fas fa-shopping-bag"></i>
                 <span id="cartBadge" class="cart-badge">0</span>
@@ -66,9 +74,9 @@
    <section class="page-hero">
     <div class="hero-backdrop"></div>
     <div class="hero-wrapper">
-        <span class="sub-heading">Fresh & Authentic</span>
-        <h1 class="hero-title">Our Bakery Menu</h1>
-        <p class="hero-description">Click "Add to Cart" on any item to build your order and checkout instantly via WhatsApp!</p>
+        <span class="sub-heading" data-i18n="hero-sub">Fresh & Authentic</span>
+        <h1 class="hero-title" data-i18n="hero-title">Our Bakery Menu</h1>
+        <p class="hero-description" data-i18n="hero-desc">Click "Add to Cart" on any item to build your order and checkout instantly via WhatsApp!</p>
     </div>
 </section>
 
@@ -77,34 +85,34 @@
             <div class="menu-search-wrapper">
                 <div class="search-input-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="menuSearch" placeholder="Search menu items (e.g., burger, bread, cake)..." autocomplete="off">
+                    <input type="text" id="menuSearch" data-i18n-placeholder="search-placeholder" placeholder="Search menu items (e.g., burger, bread, cake)..." autocomplete="off">
                 </div>
             </div>
 
             <div class="menu-filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Items</button>
-                <button class="filter-btn" data-filter="bread">Breads</button>
-                <button class="filter-btn" data-filter="fastfood">Fast Food & Snacks</button>
-                <button class="filter-btn" data-filter="sweets">Traditional Sweets</button>
-                <button class="filter-btn" data-filter="cakes">Cakes</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter-all">All Items</button>
+                <button class="filter-btn" data-filter="bread" data-i18n="filter-bread">Breads</button>
+                <button class="filter-btn" data-filter="fastfood" data-i18n="filter-fastfood">Fast Food & Snacks</button>
+                <button class="filter-btn" data-filter="sweets" data-i18n="filter-sweets">Traditional Sweets</button>
+                <button class="filter-btn" data-filter="cakes" data-i18n="filter-cakes">Cakes</button>
             </div>
 
             <div class="menu-category-card" data-category="bread">
-                <h2><i class="fas fa-bread-slice"></i> Bread Selection</h2>
+                <h2><i class="fas fa-bread-slice"></i> <span data-i18n="cat-bread">Bread Selection</span></h2>
                 <div class="table-container">
                     <table class="professional-table">
                         <thead>
                             <tr>
-                                <th>Item Description</th>
-                                <th>Price</th>
-                                <th>Action</th>
+                                <th data-i18n="table-desc">Item Description</th>
+                                <th data-i18n="table-price">Price</th>
+                                <th data-i18n="table-action">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr data-name="Standard Loaf Bread" data-price="60">
-                                <td>Standard Loaf Bread</td>
+                                <td data-i18n="item-loaf">Standard Loaf Bread</td>
                                 <td>৳60</td>
-                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td>
+                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -112,51 +120,51 @@
             </div>
 
             <div class="menu-category-card" data-category="fastfood">
-                <h2><i class="fas fa-hamburger"></i> Fast Food & Snacks</h2>
+                <h2><i class="fas fa-hamburger"></i> <span data-i18n="cat-fastfood">Fast Food & Snacks</span></h2>
                 <div class="table-container">
                     <table class="professional-table">
                         <thead>
                             <tr>
-                                <th>Item Description</th>
-                                <th>Price</th>
-                                <th>Action</th>
+                                <th data-i18n="table-desc">Item Description</th>
+                                <th data-i18n="table-price">Price</th>
+                                <th data-i18n="table-action">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-name="Chicken Burger" data-price="60"><td>Chicken Burger</td><td>৳60</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Fry" data-price="30"><td>Chicken Fry</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Roll" data-price="25"><td>Chicken Roll</td><td>৳25</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Toast" data-price="35"><td>Chicken Toast</td><td>৳35</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Samosa" data-price="10"><td>Chicken Samosa (Chomuha)</td><td>৳10</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Sandwich" data-price="30"><td>Chicken Sandwich</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Kabab" data-price="50"><td>Chicken Kabab</td><td>৳50</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Sashlik" data-price="30"><td>Chicken Sashlik</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Chop Burger" data-price="30"><td>Chicken Chop Burger</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Chicken Bun" data-price="25"><td>Chicken Bun</td><td>৳25</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Egg Chop" data-price="15"><td>Egg Chop (Dim Chop)</td><td>৳15</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Pizza" data-price="60"><td>Pizza</td><td>৳60</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
-                            <tr data-name="Hot Dog" data-price="30"><td>Hot Dog</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td></tr>
+                            <tr data-name="Chicken Burger" data-price="60"><td data-i18n="item-c-burger">Chicken Burger</td><td>৳60</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Fry" data-price="30"><td data-i18n="item-c-fry">Chicken Fry</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Roll" data-price="25"><td data-i18n="item-c-roll">Chicken Roll</td><td>৳25</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Toast" data-price="35"><td data-i18n="item-c-toast">Chicken Toast</td><td>৳35</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Samosa" data-price="10"><td data-i18n="item-c-samosa">Chicken Samosa (Chomuha)</td><td>৳10</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Sandwich" data-price="30"><td data-i18n="item-c-sandwich">Chicken Sandwich</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Kabab" data-price="50"><td data-i18n="item-c-kabab">Chicken Kabab</td><td>৳50</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Sashlik" data-price="30"><td data-i18n="item-c-sashlik">Chicken Sashlik</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Chop Burger" data-price="30"><td data-i18n="item-c-chopburger">Chicken Chop Burger</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Chicken Bun" data-price="25"><td data-i18n="item-c-bun">Chicken Bun</td><td>৳25</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Egg Chop" data-price="15"><td data-i18n="item-e-chop">Egg Chop (Dim Chop)</td><td>৳15</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Pizza" data-price="60"><td data-i18n="item-pizza">Pizza</td><td>৳60</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
+                            <tr data-name="Hot Dog" data-price="30"><td data-i18n="item-hotdog">Hot Dog</td><td>৳30</td><td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
             <div class="menu-category-card" data-category="sweets">
-                <h2><i class="fas fa-candy-cane"></i> Traditional Sweets</h2>
+                <h2><i class="fas fa-candy-cane"></i> <span data-i18n="cat-sweets">Traditional Sweets</span></h2>
                 <div class="table-container">
                     <table class="professional-table">
                         <thead>
                             <tr>
-                                <th>Item Description</th>
-                                <th>Price</th>
-                                <th>Action</th>
+                                <th data-i18n="table-desc">Item Description</th>
+                                <th data-i18n="table-price">Price</th>
+                                <th data-i18n="table-action">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr data-name="Laddu (Per Kg)" data-price="200">
-                                <td>Laddu (Per Kg)</td>
+                                <td data-i18n="item-laddu">Laddu (Per Kg)</td>
                                 <td>৳200</td>
-                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td>
+                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -164,26 +172,26 @@
             </div>
 
             <div class="menu-category-card" data-category="cakes">
-                <h2><i class="fas fa-birthday-cake"></i> Celebration Cakes</h2>
+                <h2><i class="fas fa-birthday-cake"></i> <span data-i18n="cat-cakes">Celebration Cakes</span></h2>
                 <div class="table-container">
                     <table class="professional-table">
                         <thead>
                             <tr>
-                                <th>Item Description</th>
-                                <th>Price</th>
-                                <th>Action</th>
+                                <th data-i18n="table-desc">Item Description</th>
+                                <th data-i18n="table-price">Price</th>
+                                <th data-i18n="table-action">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr data-name="Vanilla Cake (1 Pound)" data-price="350">
-                                <td>Vanilla Cake (1 Pound)</td>
+                                <td data-i18n="item-vcake">Vanilla Cake (1 Pound)</td>
                                 <td>৳350</td>
-                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td>
+                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td>
                             </tr>
                             <tr data-name="Chocolate Cake (1 Pound)" data-price="400">
-                                <td>Chocolate Cake (1 Pound)</td>
+                                <td data-i18n="item-ccake">Chocolate Cake (1 Pound)</td>
                                 <td>৳400</td>
-                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> Add</button></td>
+                                <td><button class="btn-add-cart"><i class="fas fa-plus"></i> <span data-i18n="btn-add">Add</span></button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -192,43 +200,43 @@
 
             <div class="custom-order-banner">
                 <div class="banner-content">
-                    <h3>Planning a Special Event or Bulk Order?</h3>
-                    <p>We cater to birthdays, weddings, corporate events, and large gatherings with custom bakery solutions.</p>
+                    <h3 data-i18n="banner-title">Planning a Special Event or Bulk Order?</h3>
+                    <p data-i18n="banner-desc">We cater to birthdays, weddings, corporate events, and large gatherings with custom bakery solutions.</p>
                     <a href="https://wa.me/8801711063961" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Chat On WhatsApp
+                        <i class="fab fa-whatsapp"></i> <span data-i18n="banner-btn">Chat On WhatsApp</span>
                     </a>
                 </div>
             </div>
 
             <div class="menu-notice-box">
-                <h4><i class="fas fa-info-circle"></i> Important Notice</h4>
+                <h4><i class="fas fa-info-circle"></i> <span data-i18n="notice-title">Important Notice</span></h4>
                 <ul>
-                    <li>Prices are subject to revision without prior notice.</li>
-                    <li>All products are freshly manufactured on-site every single day.</li>
-                    <li>For custom or bulk catering requirements, please contact management directly via phone or WhatsApp.</li>
+                    <li data-i18n="notice-1">Prices are subject to revision without prior notice.</li>
+                    <li data-i18n="notice-2">All products are freshly manufactured on-site every single day.</li>
+                    <li data-i18n="notice-3">For custom or bulk catering requirements, please contact management directly via phone or WhatsApp.</li>
                 </ul>
             </div>
         </div>
     </section>
 </main>
 
-<!-- New: Slide-out Cart Drawer -->
+
 <div id="cartDrawer" class="cart-drawer-overlay">
     <div class="cart-drawer">
         <div class="cart-header">
-            <h3><i class="fas fa-shopping-bag"></i> Your Order Cart</h3>
+            <h3><i class="fas fa-shopping-bag"></i> <span data-i18n="cart-title">Your Order Cart</span></h3>
             <button id="closeCartBtn" class="cart-close"><i class="fas fa-times"></i></button>
         </div>
         <div class="cart-body" id="cartItemsContainer">
-            <p class="empty-cart-msg">Your cart is currently empty.</p>
+            <p class="empty-cart-msg" data-i18n="cart-empty">Your cart is currently empty.</p>
         </div>
         <div class="cart-footer">
             <div class="cart-total-row">
-                <span>Total Amount:</span>
+                <span data-i18n="cart-total">Total Amount:</span>
                 <span id="cartTotalPrice">৳0 BDT</span>
             </div>
             <button id="checkoutWhatsAppBtn" class="btn btn-whatsapp" style="width: 100%; justify-content: center;" disabled>
-                <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
+                <i class="fab fa-whatsapp"></i> <span data-i18n="cart-checkout">Checkout via WhatsApp</span>
             </button>
         </div>
     </div>
@@ -242,20 +250,20 @@
                     <img src="images/logo.jpg" alt="Logo">
                     <h3>Bagdad Bread Factory & Sweets</h3>
                 </div>
-                <p>Since 1998.</p>
+                <p><span data-i18n="footer-since">Since</span> 1998.</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Navigation</h4>
+                <h4 data-i18n="footer-nav">Quick Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="menu.html">Our Menu</a></li>
-                    <li><a href="index.html#gallery">Gallery</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+                    <li><a href="index.html#about" data-i18n="nav-about">About Us</a></li>
+                    <li><a href="menu.html" data-i18n="nav-menu">Our Menu</a></li>
+                    <li><a href="index.html#gallery" data-i18n="nav-gallery">Gallery</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav-contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Connect With Us</h4>
+                <h4 data-i18n="footer-connect">Connect With Us</h4>
                 <div class="footer-socials">
                     <a href="https://x.com/bagdad_ctg1998" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                     <a href="https://www.facebook.com/profile.php?id=61578745061037" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -265,7 +273,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Bagdad Bread Factory & Sweets. All Rights Reserved.</p>
+            <p>&copy; 2026 Bagdad Bread Factory & Sweets. <span data-i18n="footer-rights">All Rights Reserved.</span></p>
         </div>
     </div>
 </footer>
@@ -276,6 +284,221 @@
     <a href="https://wa.me/8801711063961" class="dock-item whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </div>
 
+    
+<script>
+const translations = {
+    en: {
+        "announcement-text": "Special Festive Sweets Pre-Booking Open Now! Call",
+        "brand-sub": "& Sweets",
+        "nav-home": "Home",
+        "nav-why": "Why Us",
+        "nav-about": "About Us",
+        "nav-menu": "Our Menu",
+        "nav-gallery": "Gallery",
+        "nav-contact": "Contact",
+        "hero-sub": "Fresh & Authentic",
+        "hero-title": "Our Bakery Menu",
+        "hero-desc": "Click \"Add to Cart\" on any item to build your order and checkout instantly via WhatsApp!",
+        "search-placeholder": "Search menu items (e.g., burger, bread, cake)...",
+        "filter-all": "All Items",
+        "filter-bread": "Breads",
+        "filter-fastfood": "Fast Food & Snacks",
+        "filter-sweets": "Traditional Sweets",
+        "filter-cakes": "Cakes",
+        "cat-bread": "Bread Selection",
+        "cat-fastfood": "Fast Food & Snacks",
+        "cat-sweets": "Traditional Sweets",
+        "cat-cakes": "Celebration Cakes",
+        "table-desc": "Item Description",
+        "table-price": "Price",
+        "table-action": "Action",
+        "btn-add": "Add",
+        "item-loaf": "Standard Loaf Bread",
+        "item-c-burger": "Chicken Burger",
+        "item-c-fry": "Chicken Fry",
+        "item-c-roll": "Chicken Roll",
+        "item-c-toast": "Chicken Toast",
+        "item-c-samosa": "Chicken Samosa (Chomuha)",
+        "item-c-sandwich": "Chicken Sandwich",
+        "item-c-kabab": "Chicken Kabab",
+        "item-c-sashlik": "Chicken Sashlik",
+        "item-c-chopburger": "Chicken Chop Burger",
+        "item-c-bun": "Chicken Bun",
+        "item-e-chop": "Egg Chop (Dim Chop)",
+        "item-pizza": "Pizza",
+        "item-hotdog": "Hot Dog",
+        "item-laddu": "Laddu (Per Kg)",
+        "item-vcake": "Vanilla Cake (1 Pound)",
+        "item-ccake": "Chocolate Cake (1 Pound)",
+        "banner-title": "Planning a Special Event or Bulk Order?",
+        "banner-desc": "We cater to birthdays, weddings, corporate events, and large gatherings with custom bakery solutions.",
+        "banner-btn": "Chat On WhatsApp",
+        "notice-title": "Important Notice",
+        "notice-1": "Prices are subject to revision without prior notice.",
+        "notice-2": "All products are freshly manufactured on-site every single day.",
+        "notice-3": "For custom or bulk catering requirements, please contact management directly via phone or WhatsApp.",
+        "cart-title": "Your Order Cart",
+        "cart-empty": "Your cart is currently empty.",
+        "cart-total": "Total Amount:",
+        "cart-checkout": "Checkout via WhatsApp",
+        "footer-since": "Since",
+        "footer-nav": "Quick Navigation",
+        "footer-connect": "Connect With Us",
+        "footer-rights": "All Rights Reserved."
+    },
+    bn: {
+        "announcement-text": "বিশেষ উৎসবের মিষ্টির প্রি-বুকিং এখন চলছে! কল করুন",
+        "brand-sub": "এন্ড সুইটস",
+        "nav-home": "হোম",
+        "nav-why": "কেন আমরা",
+        "nav-about": "আমাদের সম্পর্কে",
+        "nav-menu": "আমাদের মেনু",
+        "nav-gallery": "গ্যালারি",
+        "nav-contact": "যোগাযোগ",
+        "hero-sub": "তাজা এবং খাঁটি",
+        "hero-title": "আমাদের বেকারি মেনু",
+        "hero-desc": "আপনার অর্ডার তৈরি করতে যেকোনো আইটেমে \"কার্টে যোগ করুন\" এ ক্লিক করুন এবং হোয়াটসঅ্যাপের মাধ্যমে তাৎক্ষণিকভাবে চেকআউট করুন!",
+        "search-placeholder": "মেনু আইটেম অনুসন্ধান করুন (যেমন: বার্গার, রুটি, কেক)...",
+        "filter-all": "সকল আইটেম",
+        "filter-bread": "রুটি",
+        "filter-fastfood": "ফাস্ট ফুড এবং স্ন্যাক্স",
+        "filter-sweets": "ঐতিহ্যবাহী মিষ্টি",
+        "filter-cakes": "কেক",
+        "cat-bread": "রুটির নির্বাচন",
+        "cat-fastfood": "ফাস্ট ফুড ও স্ন্যাক্স",
+        "cat-sweets": "ঐতিহ্যবাহী মিষ্টি",
+        "cat-cakes": "উদযাপনের কেক",
+        "table-desc": "আইটেমের বিবরণ",
+        "table-price": "মূল্য",
+        "table-action": "কার্যকলাপ",
+        "btn-add": "যোগ করুন",
+        "item-loaf": "স্ট্যান্ডার্ড লফ ব্রেড",
+        "item-c-burger": "চিকেন বার্গার",
+        "item-c-fry": "চিকেন ফ্রাই",
+        "item-c-roll": "চিকেন রোল",
+        "item-c-toast": "চিকেন টোস্ট",
+        "item-c-samosa": "চিকেন সমোসা (চমুহা)",
+        "item-c-sandwich": "চিকেন স্যান্ডউইচ",
+        "item-c-kabab": "চিকেন কাবাব",
+        "item-c-sashlik": "চিকেন শাশলিক",
+        "item-c-chopburger": "চিকেন চপ বার্গার",
+        "item-c-bun": "চিকেন বান",
+        "item-e-chop": "ডিম চপ",
+        "item-pizza": "পিৎজা",
+        "item-hotdog": "হট ডগ",
+        "item-laddu": "লাড্ডু (প্রতি কেজি)",
+        "item-vcake": "ভ্যানিলা কেক (১ পাউন্ড)",
+        "item-ccake": "চকলেট কেক (১ পাউন্ড)",
+        "banner-title": "বিশেষ অনুষ্ঠান বা পাইকারি অর্ডার পরিকল্পনা করছেন?",
+        "banner-desc": "আমরা কাস্টম বেকারি সলিউশন সহ জন্মদিন, বিবাহ, কর্পোরেট ইভেন্ট এবং বড় জমায়েত ক্যাটারিং করে থাকি।",
+        "banner-btn": "হোয়াটসঅ্যাপে চ্যাট করুন",
+        "notice-title": "গুরুত্বপূর্ণ নোটিশ",
+        "notice-1": "পূর্ব নোটিশ ছাড়াই মূল্য পরিবর্তন হতে পারে।",
+        "notice-2": "সমস্ত পণ্য প্রতিদিন সাইটে তাজা তৈরি করা হয়।",
+        "notice-3": "কাস্টম বা বাল্ক ক্যাটারিং প্রয়োজনের জন্য, অনুগ্রহ করে ফোন বা হোয়াটসঅ্যাপের মাধ্যমে সরাসরি ব্যবস্থাপনার সাথে যোগাযোগ করুন।",
+        "cart-title": "আপনার অর্ডার কার트",
+        "cart-empty": "আপনার কার্ট বর্তমানে খালি আছে।",
+        "cart-total": "মোট পরিমাণ:",
+        "cart-checkout": "হোয়াটসঅ্যাপের মাধ্যমে চেকআউট করুন",
+        "footer-since": "প্রতিষ্ঠিত",
+        "footer-nav": "দ্রুত নেভিগেশন",
+        "footer-connect": "আমাদের সাথে সংযুক্ত হোন",
+        "footer-rights": "সর্বস্বত্ব সংরক্ষিত।"
+    },
+    ar: {
+        "announcement-text": "الحجز المسبق للحلويات الاحتفالية الخاصة مفتوح الآن! اتصل على",
+        "brand-sub": "والحلويات",
+        "nav-home": "الرئيسية",
+        "nav-why": "لماذا نحن",
+        "nav-about": "من نحن",
+        "nav-menu": "قائمتنا",
+        "nav-gallery": "المعرض",
+        "nav-contact": "اتصل بنا",
+        "hero-sub": "طازج وأصلي",
+        "hero-title": "قائمة المخبوزات",
+        "hero-desc": "انقر على \"إضافة إلى السلة\" لأي عنصر لبناء طلبك والدفع فوراً عبر واتساب!",
+        "search-placeholder": "البحث في عناصر القائمة (مثل: برجر، خبز، كعكة)...",
+        "filter-all": "جميع العناصر",
+        "filter-bread": "المخبوزات",
+        "filter-fastfood": "الوجبات السريعة",
+        "filter-sweets": "الحلويات التقليدية",
+        "filter-cakes": "الكعك",
+        "cat-bread": "تشكيلة الخبز",
+        "cat-fastfood": "الوجبات السريعة والوجبات الخفيفة",
+        "cat-sweets": "الحلويات التقليدية",
+        "cat-cakes": "كعك الاحتفالات",
+        "table-desc": "وصف العنصر",
+        "table-price": "السعر",
+        "table-action": "الإجراء",
+        "btn-add": "إضافة",
+        "item-loaf": "خبز توست عادي",
+        "item-c-burger": "برجر دجاج",
+        "item-c-fry": "دجاج مقلي",
+        "item-c-roll": "رول دجاج",
+        "item-c-toast": "توست دجاج",
+        "item-c-samosa": "سمبوسة دجاج",
+        "item-c-sandwich": "ساندويتش دجاج",
+        "item-c-kabab": "كباب دجاج",
+        "item-c-sashlik": "شيش طاووق دجاج",
+        "item-c-chopburger": "برجر تشوب دجاج",
+        "item-c-bun": "صامولي دجاج",
+        "item-e-chop": "تشوب بيض",
+        "item-pizza": "بيتزا",
+        "item-hotdog": "هوت دوج",
+        "item-laddu": "لاديو (لكل كيلو)",
+        "item-vcake": "كعكة الفانيليا (١ باوند)",
+        "item-ccake": "كعكة الشوكولاتة (١ باوند)",
+        "banner-title": "هل تخطط لحدث خاص أو طلب بالجملة؟",
+        "banner-desc": "نحن نلبي متطلبات أعياد الميلاد وحفلات الزفاف والفعاليات المؤسسية بحلول مخبوزات مخصصة.",
+        "banner-btn": "دردش عبر واتساب",
+        "notice-title": "تنبيه مهم",
+        "notice-1": "الأسعار قابلة للتغيير دون سابق إنذار.",
+        "notice-2": "جميع المنتجات تُصنع طازجة في الموقع يومياً.",
+        "notice-3": "للمتطلبات الخاصة أو تقديم الطعام بكميات كبيرة، يرجى الاتصال بالإدارة مباشرة عبر الهاتف أو واتساب.",
+        "cart-title": "سلة الطلبات",
+        "cart-empty": "سلة التسوق فارغة حالياً.",
+        "cart-total": "المبلغ الإجمالي:",
+        "cart-checkout": "الدفع عبر واتساب",
+        "footer-since": "منذ",
+        "footer-nav": "روابط سريعة",
+        "footer-connect": "تواصل معنا",
+        "footer-rights": "جميع الحقوق محفوظة."
+    }
+};
+
+const languageSelect = document.getElementById("languageSelect");
+
+if (languageSelect) {
+    languageSelect.addEventListener("change", (e) => {
+        const lang = e.target.value;
+        
+
+        if (lang === "ar") {
+            document.documentElement.setAttribute("dir", "rtl");
+            document.documentElement.setAttribute("lang", "ar");
+        } else {
+            document.documentElement.setAttribute("dir", "ltr");
+            document.documentElement.setAttribute("lang", lang);
+        }
+
+       
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+
+        
+        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-placeholder");
+            if (translations[lang] && translations[lang][key]) {
+                el.setAttribute("placeholder", translations[lang][key]);
+            }
+        });
+    });
+}
+</script>
 <script src="script.js"></script>
 </body>
 </html>
