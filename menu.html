@@ -42,14 +42,22 @@
         </nav>
         <div class="header-actions">
           
-            <div class="language-selector-wrapper">
-                <select id="languageSelect" aria-label="Select Language" class="language-dropdown">
-                    <option value="en" selected>English</option>
-                    <option value="bn">বাংলা</option>
-                    <option value="ar">العربية</option>
-                </select>
-            </div>
-
+            <div class="language-switcher" style="position: relative; display: inline-block;">
+    <button id="langToggleBtn" aria-label="Toggle Language" title="Select Language" style="background: none; border: none; cursor: pointer; font-size: 1rem; padding: 6px 10px; border-radius: 6px; display: flex; align-items: center; gap: 5px;">
+        <i class="fas fa-globe"></i> <span id="currentLangLabel">EN</span>
+    </button>
+    <div id="langDropdown" style="display: none; position: absolute; right: 0; top: 110%; background: var(--bg-card, #fff); border: 1px solid var(--border-color, #ddd); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 1000; min-width: 130px; overflow: hidden; max-height: 250px; overflow-y: auto;">
+        <button class="lang-option" data-lang="en" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">English</button>
+        <button class="lang-option" data-lang="bn" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">বাংলা</button>
+        <button class="lang-option" data-lang="ar" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">العربية</button>
+        <button class="lang-option" data-lang="hi" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">हिन्दी</button>
+        <button class="lang-option" data-lang="ja" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">日本語</button>
+        <button class="lang-option" data-lang="zh" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">中文</button>
+        <button class="lang-option" data-lang="ru" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">Русский</button>
+        <button class="lang-option" data-lang="ur" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">اردو</button>
+     </div>
+</div>
+           
             <button id="cartToggleBtn" class="cart-toggle-btn" title="View Cart">
                 <i class="fas fa-shopping-bag"></i>
                 <span id="cartBadge" class="cart-badge">0</span>
@@ -192,6 +200,431 @@
                     </table>
                 </div>
             </div>
+
+
+<section class="features-section section-padding" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-heading" data-key="whyUs">Cake-builder</span>
+                <h2 data-key="qualityPromise">Bagdad Custom Cake Builder</h2>
+            </div>
+
+
+
+           <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Custom Cake Builder</title>
+    <style>
+        :root {
+            --primary-color: #d97706;
+            --primary-hover: #b45309;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-color: #1f2937;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .builder-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .builder-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .wizard-main {
+            padding: 30px;
+        }
+
+        h2 { margin-top: 0; color: #111; }
+
+        .step-content {
+            display: none;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .option-card {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #fff;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: #fffbeb;
+            font-weight: 600;
+        }
+
+        .option-card input[type="radio"], 
+        .option-card input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .wizard-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .btn-prev { background: #e5e7eb; color: #374151; }
+        .btn-prev:hover { background: #d1d5db; }
+
+        .btn-next, .btn-submit { background: var(--primary-color); color: white; }
+        .btn-next:hover, .btn-submit:hover { background: var(--primary-hover); }
+
+        .summary-sidebar {
+            background: #f9fafb;
+            padding: 30px;
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            .summary-sidebar {
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+            }
+        }
+
+        .summary-item {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .summary-total {
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-top: 2px solid var(--border-color);
+            padding-top: 15px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--primary-hover);
+        }
+
+        .progress-indicator {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 25px;
+        }
+
+        .progress-dot {
+            flex: 1;
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+        }
+
+        .progress-dot.active {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="builder-container">
+    <div class="wizard-main">
+        <div class="progress-indicator" id="progressBar">
+            <div class="progress-dot active"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+        </div>
+
+        <form id="cakeForm">
+            <div class="step-content active" data-step="1">
+                <h2>Step 1: Choose Cake Size</h2>
+                <p>Select the size that fits your guest count.</p>
+                <div class="option-grid">
+                    <label class="option-card selected">
+                        <input type="radio" name="size" value="1 Pound (Serves 6-8)" data-price="950" checked>
+                        <strong>1 Pound</strong><br><small>Serves 6-8<br>৳100</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="size" value="2 Pounds (Serves 12-15)" data-price="1800">
+                        <strong>2 Pounds</strong><br><small>Serves 12-15<br>৳150</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="size" value="3 Pounds (Serves 20-25)" data-price="2600">
+                        <strong>3 Pounds</strong><br><small>Serves 20-25<br>৳250</small>
+                    </label>
+                </div>
+            </div>
+
+            <div class="step-content" data-step="2">
+                <h2>Step 2: Choose Sponge Flavor</h2>
+                <p>What flavor would you like inside?</p>
+                <div class="option-grid">
+                    <label class="option-card selected">
+                        <input type="radio" name="flavor" value="Classic Vanilla" data-price="0" checked>
+                        <strong>Vanilla Bean</strong><br><small>Classic sponge</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="flavor" value="Rich Chocolate" data-price="200">
+                        <strong>Chocolate</strong><br><small>+৳200</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="flavor" value="Red Velvet" data-price="250">
+                        <strong>Red Velvet</strong><br><small>+৳250</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="flavor" value="Black Forest" data-price="300">
+                        <strong>Black Forest</strong><br><small>+৳300</small>
+                    </label>
+                </div>
+            </div>
+
+            <div class="step-content" data-step="3">
+                <h2>Step 3: Frosting & Finish</h2>
+                <p>Choose your exterior look and primary color style.</p>
+                <div class="option-grid">
+                    <label class="option-card selected">
+                        <input type="radio" name="frosting" value="Smooth Buttercream" data-price="0" checked>
+                        <strong>Smooth Buttercream</strong>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="frosting" value="Chocolate Ganache" data-price="200">
+                        <strong>Chocolate Ganache</strong><br><small>+৳200</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="frosting" value="Fondant Finish" data-price="500">
+                        <strong>Fondant</strong><br><small>+৳500</small>
+                    </label>
+                </div>
+                <label><strong>Main Color Theme:</strong></label>
+                <input type="text" id="colorTheme" name="colorTheme" placeholder="e.g., Pastel Pink & Gold accents">
+            </div>
+
+            <div class="step-content" data-step="4">
+                <h2>Step 4: Finishing Touches</h2>
+                <p>Personalize your message and add extra flair.</p>
+                
+                <label><strong>Cake Inscription Message:</strong></label>
+                <input type="text" id="cakeMessage" name="cakeMessage" placeholder="e.g., Happy Birthday Tanvir!">
+
+                <label><strong>Optional Add-ons:</strong></label>
+                <div class="option-grid">
+                    <label class="option-card">
+                        <input type="checkbox" name="addon" value="Fresh Flowers" data-price="300">
+                        <strong>Fresh Flowers</strong><br><small>+৳300</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="addon" value="Edible Gold Leaf" data-price="250">
+                        <strong>Gold Leaf</strong><br><small>+৳250</small>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="addon" value="Extra Candles & Sparkler" data-price="100">
+                        <strong>Sparkler & Candles</strong><br><small>+৳100</small>
+                    </label>
+                </div>
+            </div>
+        </form>
+
+        <div class="wizard-buttons">
+            <button type="button" class="btn-prev" id="prevBtn" style="display: none;" onclick="nextPrev(-1)">Back</button>
+            <button type="button" class="btn-next" id="nextBtn" onclick="nextPrev(1)">Next Step</button>
+        </div>
+    </div>
+
+    <div class="summary-sidebar">
+        <div>
+            <h2>Your Custom Cake</h2>
+            <div id="summaryList">
+                <div class="summary-item"><span>Size:</span> <strong id="sumSize">1 Pound</strong></div>
+                <div class="summary-item"><span>Flavor:</span> <strong id="sumFlavor">Vanilla Bean</strong></div>
+                <div class="summary-item"><span>Frosting:</span> <strong id="sumFrosting">Smooth Buttercream</strong></div>
+                <div class="summary-item"><span>Color:</span> <strong id="sumColor">Default</strong></div>
+                <div class="summary-item"><span>Message:</span> <strong id="sumMessage">None</strong></div>
+                <div class="summary-item"><span>Add-ons:</span> <strong id="sumAddons">None</strong></div>
+            </div>
+        </div>
+        <div>
+            <div class="summary-total">
+                <span>Total:</span>
+                <span id="sumTotal">৳950</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".step-content");
+    const progressDots = document.querySelectorAll(".progress-dot");
+
+    function showStep(n) {
+        steps[currentStep].classList.remove("active");
+        currentStep = n;
+        steps[currentStep].classList.add("active");
+
+        document.getElementById("prevBtn").style.display = currentStep === 0 ? "none" : "inline-block";
+        const nextBtn = document.getElementById("nextBtn");
+        if (currentStep === steps.length - 1) {
+            nextBtn.textContent = "Order via WhatsApp";
+            nextBtn.className = "btn-submit";
+        } else {
+            nextBtn.textContent = "Next Step";
+            nextBtn.className = "btn-next";
+        }
+
+        progressDots.forEach((dot, index) => {
+            dot.classList.toggle("active", index <= currentStep);
+        });
+    }
+
+    function nextPrev(n) {
+        if (currentStep === steps.length - 1 && n === 1) {
+            sendToWhatsApp();
+            return;
+        }
+        currentStep += n;
+        showStep(currentStep);
+    }
+
+    document.querySelectorAll('.option-card').forEach(card => {
+        const input = card.querySelector('input');
+        
+        card.addEventListener('click', () => {
+            if (input.type === 'radio') {
+                const name = input.name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.closest('.option-card').classList.remove('selected');
+                });
+                card.classList.add('selected');
+                input.checked = true;
+            } else if (input.type === 'checkbox') {
+                input.checked = !input.checked;
+                card.classList.toggle('selected', input.checked);
+            }
+            updateSummaryAndPrice();
+        });
+    });
+
+    document.getElementById('colorTheme').addEventListener('input', updateSummaryAndPrice);
+    document.getElementById('cakeMessage').addEventListener('input', updateSummaryAndPrice);
+
+    function updateSummaryAndPrice() {
+        let total = 0;
+
+        const selectedSize = document.querySelector('input[name="size"]:checked');
+        if (selectedSize) {
+            total += parseFloat(selectedSize.dataset.price);
+            document.getElementById('sumSize').textContent = selectedSize.value;
+        }
+
+        const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
+        if (selectedFlavor) {
+            total += parseFloat(selectedFlavor.dataset.price);
+            document.getElementById('sumFlavor').textContent = selectedFlavor.value;
+        }
+
+        const selectedFrosting = document.querySelector('input[name="frosting"]:checked');
+        if (selectedFrosting) {
+            total += parseFloat(selectedFrosting.dataset.price);
+            document.getElementById('sumFrosting').textContent = selectedFrosting.value;
+        }
+
+        const colorVal = document.getElementById('colorTheme').value.trim();
+        document.getElementById('sumColor').textContent = colorVal ? colorVal : 'Default';
+
+        const msgVal = document.getElementById('cakeMessage').value.trim();
+        document.getElementById('sumMessage').textContent = msgVal ? msgVal : 'None';
+
+        let addonNames = [];
+        document.querySelectorAll('input[name="addon"]:checked').forEach(addon => {
+            total += parseFloat(addon.dataset.price);
+            addonNames.push(addon.closest('.option-card').querySelector('strong').textContent);
+        });
+        document.getElementById('sumAddons').textContent = addonNames.length > 0 ? addonNames.join(', ') : 'None';
+
+        document.getElementById('sumTotal').textContent = `৳${total.toLocaleString('en-IN')}`;
+    }
+
+    function sendToWhatsApp() {
+        const phoneNumber = "8801711063961";
+        
+        const size = document.getElementById('sumSize').textContent;
+        const flavor = document.getElementById('sumFlavor').textContent;
+        const frosting = document.getElementById('sumFrosting').textContent;
+        const color = document.getElementById('sumColor').textContent;
+        const message = document.getElementById('sumMessage').textContent;
+        const addons = document.getElementById('sumAddons').textContent;
+        const total = document.getElementById('sumTotal').textContent;
+
+        const text = `Hello! I want to order a custom cake:%0A%0A*Size:* ${size}%0A*Flavor:* ${flavor}%0A*Frosting:* ${frosting}%0A*Color Theme:* ${color}%0A*Cake Message:* ${message}%0A*Add-ons:* ${addons}%0A%0A*Total Cost:* ${total}`;
+
+        const url = `https://wa.me/${phoneNumber}?text=${text}`;
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
+
 
             <div class="custom-order-banner">
                 <div class="banner-content">
