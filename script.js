@@ -371,3 +371,114 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(styleSheet);
 });
+
+<script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll(".step-content");
+    const progressDots = document.querySelectorAll(".progress-dot");
+
+    function showStep(n) {
+        steps[currentStep].classList.remove("active");
+        currentStep = n;
+        steps[currentStep].classList.add("active");
+
+        document.getElementById("prevBtn").style.display = currentStep === 0 ? "none" : "inline-block";
+        const nextBtn = document.getElementById("nextBtn");
+        if (currentStep === steps.length - 1) {
+            nextBtn.textContent = "Order via WhatsApp";
+            nextBtn.className = "btn-submit";
+        } else {
+            nextBtn.textContent = "Next Step";
+            nextBtn.className = "btn-next";
+        }
+
+        progressDots.forEach((dot, index) => {
+            dot.classList.toggle("active", index <= currentStep);
+        });
+    }
+
+    function nextPrev(n) {
+        if (currentStep === steps.length - 1 && n === 1) {
+            sendToWhatsApp();
+            return;
+        }
+        currentStep += n;
+        showStep(currentStep);
+    }
+
+    document.querySelectorAll('.option-card').forEach(card => {
+        const input = card.querySelector('input');
+        
+        card.addEventListener('click', () => {
+            if (input.type === 'radio') {
+                const name = input.name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.closest('.option-card').classList.remove('selected');
+                });
+                card.classList.add('selected');
+                input.checked = true;
+            } else if (input.type === 'checkbox') {
+                input.checked = !input.checked;
+                card.classList.toggle('selected', input.checked);
+            }
+            updateSummaryAndPrice();
+        });
+    });
+
+    document.getElementById('colorTheme').addEventListener('input', updateSummaryAndPrice);
+    document.getElementById('cakeMessage').addEventListener('input', updateSummaryAndPrice);
+
+    function updateSummaryAndPrice() {
+        let total = 0;
+
+        const selectedSize = document.querySelector('input[name="size"]:checked');
+        if (selectedSize) {
+            total += parseFloat(selectedSize.dataset.price);
+            document.getElementById('sumSize').textContent = selectedSize.value;
+        }
+
+        const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
+        if (selectedFlavor) {
+            total += parseFloat(selectedFlavor.dataset.price);
+            document.getElementById('sumFlavor').textContent = selectedFlavor.value;
+        }
+
+        const selectedFrosting = document.querySelector('input[name="frosting"]:checked');
+        if (selectedFrosting) {
+            total += parseFloat(selectedFrosting.dataset.price);
+            document.getElementById('sumFrosting').textContent = selectedFrosting.value;
+        }
+
+        const colorVal = document.getElementById('colorTheme').value.trim();
+        document.getElementById('sumColor').textContent = colorVal ? colorVal : 'Default';
+
+        const msgVal = document.getElementById('cakeMessage').value.trim();
+        document.getElementById('sumMessage').textContent = msgVal ? msgVal : 'None';
+
+        let addonNames = [];
+        document.querySelectorAll('input[name="addon"]:checked').forEach(addon => {
+            total += parseFloat(addon.dataset.price);
+            addonNames.push(addon.closest('.option-card').querySelector('strong').textContent);
+        });
+        document.getElementById('sumAddons').textContent = addonNames.length > 0 ? addonNames.join(', ') : 'None';
+
+        document.getElementById('sumTotal').textContent = `৳${total.toLocaleString('en-IN')}`;
+    }
+
+    function sendToWhatsApp() {
+        const phoneNumber = "8801711063961";
+        
+        const size = document.getElementById('sumSize').textContent;
+        const flavor = document.getElementById('sumFlavor').textContent;
+        const frosting = document.getElementById('sumFrosting').textContent;
+        const color = document.getElementById('sumColor').textContent;
+        const message = document.getElementById('sumMessage').textContent;
+        const addons = document.getElementById('sumAddons').textContent;
+        const total = document.getElementById('sumTotal').textContent;
+
+        const text = `Hello! I want to order a custom cake:%0A%0A*Size:* ${size}%0A*Flavor:* ${flavor}%0A*Frosting:* ${frosting}%0A*Color Theme:* ${color}%0A*Cake Message:* ${message}%0A*Add-ons:* ${addons}%0A%0A*Total Cost:* ${total}`;
+
+        const url = `https://wa.me/${phoneNumber}?text=${text}`;
+        window.open(url, '_blank');
+    }
+</script>
