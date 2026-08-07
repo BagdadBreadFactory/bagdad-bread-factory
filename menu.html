@@ -19,8 +19,6 @@
 </head>
 <body>
 
-
-
 <header id="site-header">
     <div class="nav-container">
         <a href="index.html" class="brand-logo">
@@ -41,22 +39,21 @@
             </ul>
         </nav>
         <div class="header-actions">
-          
             <div class="language-switcher" style="position: relative; display: inline-block;">
-    <button id="langToggleBtn" aria-label="Toggle Language" title="Select Language" style="background: none; border: none; cursor: pointer; font-size: 1rem; padding: 6px 10px; border-radius: 6px; display: flex; align-items: center; gap: 5px;">
-        <i class="fas fa-globe"></i> <span id="currentLangLabel">EN</span>
-    </button>
-    <div id="langDropdown" style="display: none; position: absolute; right: 0; top: 110%; background: var(--bg-card, #fff); border: 1px solid var(--border-color, #ddd); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 1000; min-width: 130px; overflow: hidden; max-height: 250px; overflow-y: auto;">
-        <button class="lang-option" data-lang="en" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">English</button>
-        <button class="lang-option" data-lang="bn" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">বাংলা</button>
-        <button class="lang-option" data-lang="ar" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">العربية</button>
-        <button class="lang-option" data-lang="hi" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">हिन्दी</button>
-        <button class="lang-option" data-lang="ja" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">日本語</button>
-        <button class="lang-option" data-lang="zh" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">中文</button>
-        <button class="lang-option" data-lang="ru" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">Русский</button>
-        <button class="lang-option" data-lang="ur" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">اردو</button>
-     </div>
-</div>
+                <button id="langToggleBtn" aria-label="Toggle Language" title="Select Language" style="background: none; border: none; cursor: pointer; font-size: 1rem; padding: 6px 10px; border-radius: 6px; display: flex; align-items: center; gap: 5px;">
+                    <i class="fas fa-globe"></i> <span id="currentLangLabel">EN</span>
+                </button>
+                <div id="langDropdown" style="display: none; position: absolute; right: 0; top: 110%; background: var(--bg-card, #fff); border: 1px solid var(--border-color, #ddd); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); z-index: 1000; min-width: 130px; overflow: hidden; max-height: 250px; overflow-y: auto;">
+                    <button class="lang-option" data-lang="en" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">English</button>
+                    <button class="lang-option" data-lang="bn" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">বাংলা</button>
+                    <button class="lang-option" data-lang="ar" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">العربية</button>
+                    <button class="lang-option" data-lang="hi" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">हिन्दी</button>
+                    <button class="lang-option" data-lang="ja" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">日本語</button>
+                    <button class="lang-option" data-lang="zh" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">中文</button>
+                    <button class="lang-option" data-lang="ru" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">Русский</button>
+                    <button class="lang-option" data-lang="ur" style="width: 100%; padding: 8px 12px; text-align: left; background: none; border: none; cursor: pointer;">اردو</button>
+                </div>
+            </div>
            
             <button id="cartToggleBtn" class="cart-toggle-btn" title="View Cart">
                 <i class="fas fa-shopping-bag"></i>
@@ -74,14 +71,14 @@
 </header>
 
 <main>
-   <section class="page-hero">
-    <div class="hero-backdrop"></div>
-    <div class="hero-wrapper">
-        <span class="sub-heading" data-i18n="hero-sub">Fresh & Authentic</span>
-        <h1 class="hero-title" data-i18n="hero-title">Our Bakery Menu</h1>
-        <p class="hero-description" data-i18n="hero-desc">Click "Add to Cart" on any item to build your order and checkout instantly via WhatsApp!</p>
-    </div>
-</section>
+    <section class="page-hero">
+        <div class="hero-backdrop"></div>
+        <div class="hero-wrapper">
+            <span class="sub-heading" data-i18n="hero-sub">Fresh & Authentic</span>
+            <h1 class="hero-title" data-i18n="hero-title">Our Bakery Menu</h1>
+            <p class="hero-description" data-i18n="hero-desc">Click "Add to Cart" on any item to build your order and checkout instantly via WhatsApp!</p>
+        </div>
+    </section>
 
     <section class="menu-display-section section-padding">
         <div class="container">
@@ -201,156 +198,139 @@
                 </div>
             </div>
 
+            <section class="features-section section-padding" id="features" style="padding-left: 0; padding-right: 0;">
+                <div class="container" style="padding: 0;">
+                    <div class="section-header text-center">
+                        <span class="sub-heading" data-key="whyUs">Cake-builder</span>
+                        <h2 data-key="qualityPromise">Bagdad Custom Cake Builder</h2>
+                    </div>
 
-<section class="features-section section-padding" id="features">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="sub-heading" data-key="whyUs">Cake-builder</span>
-                <h2 data-key="qualityPromise">Bagdad Custom Cake Builder</h2>
-            </div>
+                    <div class="builder-container">
+                        <div class="wizard-main">
+                            <div class="progress-indicator" id="progressBar">
+                                <div class="progress-dot active"></div>
+                                <div class="progress-dot"></div>
+                                <div class="progress-dot"></div>
+                                <div class="progress-dot"></div>
+                            </div>
 
+                            <form id="cakeForm">
+                                <div class="step-content active" data-step="1">
+                                    <h2>Step 1: Choose Cake Size</h2>
+                                    <p>Select the size that fits your guest count.</p>
+                                    <div class="option-grid">
+                                        <label class="option-card selected">
+                                            <input type="radio" name="size" value="1 Pound (Serves 6-8)" data-price="950" checked>
+                                            <strong>1 Pound</strong><br><small>Serves 6-8<br>৳100</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="radio" name="size" value="2 Pounds (Serves 12-15)" data-price="1800">
+                                            <strong>2 Pounds</strong><br><small>Serves 12-15<br>৳150</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="radio" name="size" value="3 Pounds (Serves 20-25)" data-price="2600">
+                                            <strong>3 Pounds</strong><br><small>Serves 20-25<br>৳250</small>
+                                        </label>
+                                    </div>
+                                </div>
 
+                                <div class="step-content" data-step="2">
+                                    <h2>Step 2: Choose Sponge Flavor</h2>
+                                    <p>What flavor would you like inside?</p>
+                                    <div class="option-grid">
+                                        <label class="option-card selected">
+                                            <input type="radio" name="flavor" value="Classic Vanilla" data-price="0" checked>
+                                            <strong>Vanilla Bean</strong><br><small>Classic sponge</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="radio" name="flavor" value="Rich Chocolate" data-price="200">
+                                            <strong>Chocolate</strong><br><small>+৳200</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="radio" name="flavor" value="Red Velvet" data-price="250">
+                                            <strong>Red Velvet</strong><br><small>+৳250</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="radio" name="flavor" value="Black Forest" data-price="300">
+                                            <strong>Black Forest</strong><br><small>+৳300</small>
+                                        </label>
+                                    </div>
+                                </div>
 
-           <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Custom Cake Builder</title>
-   
-</head>
-<body>
+                                <div class="step-content" data-step="3">
+                                    <h2>Step 3: Frosting & Finish</h2>
+                                    <p>Choose your exterior look and primary color style.</p>
+                                    <div class="option-grid">
+                                        <label class="option-card selected">
+                                            <input type="radio" name="frosting" value="Smooth Buttercream" data-price="0" checked>
+                                            <strong>Smooth Buttercream</strong>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="radio" name="frosting" value="Chocolate Ganache" data-price="200">
+                                            <strong>Chocolate Ganache</strong><br><small>+৳200</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="radio" name="frosting" value="Fondant Finish" data-price="500">
+                                            <strong>Fondant</strong><br><small>+৳500</small>
+                                        </label>
+                                    </div>
+                                    <label><strong>Main Color Theme:</strong></label>
+                                    <input type="text" id="colorTheme" name="colorTheme" placeholder="e.g., Pastel Pink & Gold accents">
+                                </div>
 
-<div class="builder-container">
-    <div class="wizard-main">
-        <div class="progress-indicator" id="progressBar">
-            <div class="progress-dot active"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
-            <div class="progress-dot"></div>
-        </div>
+                                <div class="step-content" data-step="4">
+                                    <h2>Step 4: Finishing Touches</h2>
+                                    <p>Personalize your message and add extra flair.</p>
+                                    
+                                    <label><strong>Cake Inscription Message:</strong></label>
+                                    <input type="text" id="cakeMessage" name="cakeMessage" placeholder="e.g., Happy Birthday Tanvir!">
 
-        <form id="cakeForm">
-            <div class="step-content active" data-step="1">
-                <h2>Step 1: Choose Cake Size</h2>
-                <p>Select the size that fits your guest count.</p>
-                <div class="option-grid">
-                    <label class="option-card selected">
-                        <input type="radio" name="size" value="1 Pound (Serves 6-8)" data-price="950" checked>
-                        <strong>1 Pound</strong><br><small>Serves 6-8<br>৳100</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="size" value="2 Pounds (Serves 12-15)" data-price="1800">
-                        <strong>2 Pounds</strong><br><small>Serves 12-15<br>৳150</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="size" value="3 Pounds (Serves 20-25)" data-price="2600">
-                        <strong>3 Pounds</strong><br><small>Serves 20-25<br>৳250</small>
-                    </label>
+                                    <label><strong>Optional Add-ons:</strong></label>
+                                    <div class="option-grid">
+                                        <label class="option-card">
+                                            <input type="checkbox" name="addon" value="Fresh Flowers" data-price="300">
+                                            <strong>Fresh Flowers</strong><br><small>+৳300</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="checkbox" name="addon" value="Edible Gold Leaf" data-price="250">
+                                            <strong>Gold Leaf</strong><br><small>+৳250</small>
+                                        </label>
+                                        <label class="option-card">
+                                            <input type="checkbox" name="addon" value="Extra Candles & Sparkler" data-price="100">
+                                            <strong>Sparkler & Candles</strong><br><small>+৳100</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="wizard-buttons">
+                                <button type="button" class="btn-prev" id="prevBtn" style="display: none;" onclick="nextPrev(-1)">Back</button>
+                                <button type="button" class="btn-next" id="nextBtn" onclick="nextPrev(1)">Next Step</button>
+                            </div>
+                        </div>
+
+                        <div class="summary-sidebar">
+                            <div>
+                                <h2>Your Custom Cake</h2>
+                                <div id="summaryList">
+                                    <div class="summary-item"><span>Size:</span> <strong id="sumSize">1 Pound</strong></div>
+                                    <div class="summary-item"><span>Flavor:</span> <strong id="sumFlavor">Vanilla Bean</strong></div>
+                                    <div class="summary-item"><span>Frosting:</span> <strong id="sumFrosting">Smooth Buttercream</strong></div>
+                                    <div class="summary-item"><span>Color:</span> <strong id="sumColor">Default</strong></div>
+                                    <div class="summary-item"><span>Message:</span> <strong id="sumMessage">None</strong></div>
+                                    <div class="summary-item"><span>Add-ons:</span> <strong id="sumAddons">None</strong></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="summary-total">
+                                    <span>Total:</span>
+                                    <span id="sumTotal">৳950</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="step-content" data-step="2">
-                <h2>Step 2: Choose Sponge Flavor</h2>
-                <p>What flavor would you like inside?</p>
-                <div class="option-grid">
-                    <label class="option-card selected">
-                        <input type="radio" name="flavor" value="Classic Vanilla" data-price="0" checked>
-                        <strong>Vanilla Bean</strong><br><small>Classic sponge</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="flavor" value="Rich Chocolate" data-price="200">
-                        <strong>Chocolate</strong><br><small>+৳200</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="flavor" value="Red Velvet" data-price="250">
-                        <strong>Red Velvet</strong><br><small>+৳250</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="flavor" value="Black Forest" data-price="300">
-                        <strong>Black Forest</strong><br><small>+৳300</small>
-                    </label>
-                </div>
-            </div>
-
-            <div class="step-content" data-step="3">
-                <h2>Step 3: Frosting & Finish</h2>
-                <p>Choose your exterior look and primary color style.</p>
-                <div class="option-grid">
-                    <label class="option-card selected">
-                        <input type="radio" name="frosting" value="Smooth Buttercream" data-price="0" checked>
-                        <strong>Smooth Buttercream</strong>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="frosting" value="Chocolate Ganache" data-price="200">
-                        <strong>Chocolate Ganache</strong><br><small>+৳200</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="radio" name="frosting" value="Fondant Finish" data-price="500">
-                        <strong>Fondant</strong><br><small>+৳500</small>
-                    </label>
-                </div>
-                <label><strong>Main Color Theme:</strong></label>
-                <input type="text" id="colorTheme" name="colorTheme" placeholder="e.g., Pastel Pink & Gold accents">
-            </div>
-
-            <div class="step-content" data-step="4">
-                <h2>Step 4: Finishing Touches</h2>
-                <p>Personalize your message and add extra flair.</p>
-                
-                <label><strong>Cake Inscription Message:</strong></label>
-                <input type="text" id="cakeMessage" name="cakeMessage" placeholder="e.g., Happy Birthday Tanvir!">
-
-                <label><strong>Optional Add-ons:</strong></label>
-                <div class="option-grid">
-                    <label class="option-card">
-                        <input type="checkbox" name="addon" value="Fresh Flowers" data-price="300">
-                        <strong>Fresh Flowers</strong><br><small>+৳300</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="checkbox" name="addon" value="Edible Gold Leaf" data-price="250">
-                        <strong>Gold Leaf</strong><br><small>+৳250</small>
-                    </label>
-                    <label class="option-card">
-                        <input type="checkbox" name="addon" value="Extra Candles & Sparkler" data-price="100">
-                        <strong>Sparkler & Candles</strong><br><small>+৳100</small>
-                    </label>
-                </div>
-            </div>
-        </form>
-
-        <div class="wizard-buttons">
-            <button type="button" class="btn-prev" id="prevBtn" style="display: none;" onclick="nextPrev(-1)">Back</button>
-            <button type="button" class="btn-next" id="nextBtn" onclick="nextPrev(1)">Next Step</button>
-        </div>
-    </div>
-
-    <div class="summary-sidebar">
-        <div>
-            <h2>Your Custom Cake</h2>
-            <div id="summaryList">
-                <div class="summary-item"><span>Size:</span> <strong id="sumSize">1 Pound</strong></div>
-                <div class="summary-item"><span>Flavor:</span> <strong id="sumFlavor">Vanilla Bean</strong></div>
-                <div class="summary-item"><span>Frosting:</span> <strong id="sumFrosting">Smooth Buttercream</strong></div>
-                <div class="summary-item"><span>Color:</span> <strong id="sumColor">Default</strong></div>
-                <div class="summary-item"><span>Message:</span> <strong id="sumMessage">None</strong></div>
-                <div class="summary-item"><span>Add-ons:</span> <strong id="sumAddons">None</strong></div>
-            </div>
-        </div>
-        <div>
-            <div class="summary-total">
-                <span>Total:</span>
-                <span id="sumTotal">৳950</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-</body>
-</html>
-
+            </section>
 
             <div class="custom-order-banner">
                 <div class="banner-content">
@@ -373,7 +353,6 @@
         </div>
     </section>
 </main>
-
 
 <div id="cartDrawer" class="cart-drawer-overlay">
     <div class="cart-drawer">
@@ -438,7 +417,6 @@
     <a href="https://wa.me/8801711063961" class="dock-item whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </div>
 
-    
 <script>
 const translations = {
     en: {
@@ -550,7 +528,7 @@ const translations = {
         "notice-1": "পূর্ব নোটিশ ছাড়াই মূল্য পরিবর্তন হতে পারে।",
         "notice-2": "সমস্ত পণ্য প্রতিদিন সাইটে তাজা তৈরি করা হয়।",
         "notice-3": "কাস্টম বা বাল্ক ক্যাটারিং প্রয়োজনের জন্য, অনুগ্রহ করে ফোন বা হোয়াটসঅ্যাপের মাধ্যমে সরাসরি ব্যবস্থাপনার সাথে যোগাযোগ করুন।",
-        "cart-title": "আপনার অর্ডার কার트",
+        "cart-title": "আপনার অর্ডার কার্ট",
         "cart-empty": "আপনার কার্ট বর্তমানে খালি আছে।",
         "cart-total": "মোট পরিমাণ:",
         "cart-checkout": "হোয়াটসঅ্যাপের মাধ্যমে চেকআউট করুন",
@@ -620,35 +598,47 @@ const translations = {
     }
 };
 
-const languageSelect = document.getElementById("languageSelect");
+const langToggleBtn = document.getElementById("langToggleBtn");
+const langDropdown = document.getElementById("langDropdown");
+const currentLangLabel = document.getElementById("currentLangLabel");
 
-if (languageSelect) {
-    languageSelect.addEventListener("change", (e) => {
-        const lang = e.target.value;
-        
+if (langToggleBtn && langDropdown) {
+    langToggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === "block" ? "none" : "block";
+    });
 
-        if (lang === "ar") {
-            document.documentElement.setAttribute("dir", "rtl");
-            document.documentElement.setAttribute("lang", "ar");
-        } else {
-            document.documentElement.setAttribute("dir", "ltr");
+    document.addEventListener("click", () => {
+        langDropdown.style.display = "none";
+    });
+
+    document.querySelectorAll(".lang-option").forEach((option) => {
+        option.addEventListener("click", (e) => {
+            const lang = e.target.getAttribute("data-lang");
+            currentLangLabel.textContent = lang.toUpperCase();
+            
+            if (lang === "ar" || lang === "ur") {
+                document.documentElement.setAttribute("dir", "rtl");
+            } else {
+                document.documentElement.setAttribute("dir", "ltr");
+            }
             document.documentElement.setAttribute("lang", lang);
-        }
 
-       
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-            const key = el.getAttribute("data-i18n");
-            if (translations[lang] && translations[lang][key]) {
-                el.textContent = translations[lang][key];
-            }
-        });
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+                const key = el.getAttribute("data-i18n");
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
 
-        
-        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-            const key = el.getAttribute("data-i18n-placeholder");
-            if (translations[lang] && translations[lang][key]) {
-                el.setAttribute("placeholder", translations[lang][key]);
-            }
+            document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+                const key = el.getAttribute("data-i18n-placeholder");
+                if (translations[lang] && translations[lang][key]) {
+                    el.setAttribute("placeholder", translations[lang][key]);
+                }
+            });
+            
+            langDropdown.style.display = "none";
         });
     });
 }
