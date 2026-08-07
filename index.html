@@ -61,7 +61,6 @@
                 <span class="status-text" data-key="statusChecking">Checking...</span>
             </div>
            
- 
            <div class="language-switcher" style="position: relative; display: inline-block;">
     <button id="langToggleBtn" aria-label="Toggle Language" title="Select Language" style="background: none; border: none; cursor: pointer; font-size: 1rem; padding: 6px 10px; border-radius: 6px; display: flex; align-items: center; gap: 5px;">
         <i class="fas fa-globe"></i> <span id="currentLangLabel">EN</span>
@@ -95,8 +94,7 @@
                 <i class="fas fa-award"></i><span data-key="heroBadge">Since 1998</span>
             </div>
             <h1 class="hero-title" data-key="heroTitle">bagdad bread factory</h1>
-            <p class="hero-description reveal-item" data-key="heroDesc
-                "></p>
+            <p class="hero-description reveal-item" data-key="heroDesc">Freshly baked bread, rich custom cakes, and authentic traditional sweets made daily in Chattogram.</p>
         </div>
     </section>
 
@@ -253,21 +251,21 @@
                 <h2 data-key="deliciousCreations">Our Delicious Creations</h2>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item reveal-scale">
+                <div class="gallery-item reveal-scale" data-caption="Artisanal Breads - Baked warm every morning">
                     <img src="images/bread.jpg" alt="Fresh Baked Bread" loading="lazy">
                     <div class="gallery-overlay">
                         <h3 data-key="gal1Title">Artisanal Breads</h3>
                         <p data-key="gal1Desc">Baked warm every morning</p>
                     </div>
                 </div>
-                <div class="gallery-item reveal-scale">
+                <div class="gallery-item reveal-scale" data-caption="Fast Food & Snacks - Savory treats and bakes">
                     <img src="images/goods.jpg" alt="Assorted Baked Goods" loading="lazy">
                     <div class="gallery-overlay">
                         <h3 data-key="gal2Title">Fast Food & Snacks</h3>
                         <p data-key="gal2Desc">Savory treats and bakes</p>
                     </div>
                 </div>
-                <div class="gallery-item reveal-scale">
+                <div class="gallery-item reveal-scale" data-caption="Premium Sweets - Authentic flavor profiles">
                     <img src="images/sweets.jpg" alt="Traditional Sweets" loading="lazy">
                     <div class="gallery-overlay">
                         <h3 data-key="gal3Title">Premium Sweets</h3>
@@ -309,19 +307,19 @@
             </div>
             <div class="faq-accordion">
                 <div class="faq-item">
-                    <button class="faq-question"><span data-key="faq1Q">Where is Bagdad Bread Factory & Sweets located?</span> <i class="fas fa-chevron-down"></i></button>
+                    <button class="faq-question" type="button"><span data-key="faq1Q">Where is Bagdad Bread Factory & Sweets located?</span> <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer"><p data-key="faq1A">We are conveniently located at Oxygen, Bayezid, Chattogram, Bangladesh. You can easily find us on Google Maps or call us at 02-41380278 for precise directions.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question"><span data-key="faq2Q">Do you accept custom cake orders for birthdays and weddings?</span> <i class="fas fa-chevron-down"></i></button>
+                    <button class="faq-question" type="button"><span data-key="faq2Q">Do you accept custom cake orders for birthdays and weddings?</span> <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer"><p data-key="faq2A">Yes! We specialize in custom celebration cakes including vanilla, chocolate, and multi-tier event cakes. Please contact us via phone or WhatsApp at least 24 hours in advance.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question"><span data-key="faq3Q">What are your daily operating hours?</span> <i class="fas fa-chevron-down"></i></button>
+                    <button class="faq-question" type="button"><span data-key="faq3Q">What are your daily operating hours?</span> <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer"><p data-key="faq3A">We are open every day from Sunday to Saturday, starting early morning at 7:00 AM until 11:00 PM at night.</p></div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question"><span data-key="faq4Q">Are your products baked fresh every day?</span> <i class="fas fa-chevron-down"></i></button>
+                    <button class="faq-question" type="button"><span data-key="faq4Q">Are your products baked fresh every day?</span> <i class="fas fa-chevron-down"></i></button>
                     <div class="faq-answer"><p data-key="faq4A">Absolutely. All our breads, fast foods, snacks, and traditional sweets are manufactured on-site daily in small batches to guarantee pristine freshness and taste.</p></div>
                 </div>
             </div>
@@ -362,7 +360,7 @@
 
 <div id="reviewModal" class="modal-overlay">
     <div class="modal-card">
-        <button class="modal-close" id="closeReviewModal"><i class="fas fa-times"></i></button>
+        <button class="modal-close" id="closeReviewModal" type="button"><i class="fas fa-times"></i></button>
         <h3 data-key="modalTitle">Write a Review</h3>
         <p data-key="modalDesc">Share your experience with Bagdad Bread Factory & Sweets</p>
         <form id="reviewForm">
@@ -392,7 +390,7 @@
 </div>
 
 <div id="lightboxModal" class="lightbox-overlay">
-    <button class="lightbox-close" id="closeLightbox"><i class="fas fa-times"></i></button>
+    <button class="lightbox-close" id="closeLightbox" type="button"><i class="fas fa-times"></i></button>
     <img id="lightboxImg" src="" alt="Enlarged Bakery Creation">
     <div id="lightboxCaption" class="lightbox-caption"></div>
 </div>
@@ -434,14 +432,12 @@
 </footer>
 
 <div class="floating-dock">
-    <button id="scrollToTopBtn" class="dock-item" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <button id="scrollToTopBtn" class="dock-item" type="button" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
     <a href="tel:0241380278" class="dock-item" title="Call Us"><i class="fas fa-phone-alt"></i></a>
     <a href="https://wa.me/8801711063961" class="dock-item whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </div>
 
-
 <script>
-
 const translations = {
     en: {
         announcement: "Special Festive Sweets Pre-Booking Open Now! Call",
@@ -462,18 +458,6 @@ const translations = {
         tick3: "🥐 Artisanal Breads & Pastries",
         tick4: "🍬 Authentic Traditional Sweets",
         tick5: "📍 Oxygen, Bayezid, Chattogram",
-        estSub: "Interactive Tool",
-        estTitle: "Quick Order Price Estimator",
-        estDesc: "Calculate your estimated bakery total instantly before ordering",
-        estCatLabel: "Select Category:",
-        optBread: "Bread & Loaf (৳60)",
-        optBurger: "Chicken Burger (৳60)",
-        optCake: "Celebration Cake - 1 Pound (৳350)",
-        optLaddu: "Traditional Laddu - Per Kg (৳200)",
-        optSamosa: "Chicken Samosa (৳10)",
-        estQtyLabel: "Quantity / Units:",
-        estPriceLabel: "Estimated Price:",
-        orderWhatsApp: "Order Via WhatsApp",
         whyUs: "Why Choose Us",
         qualityPromise: "The Bagdad Quality Promise",
         feat1Title: "Bespoke Freshness",
@@ -572,18 +556,6 @@ const translations = {
         tick3: "🥐 কারিগরী পাউরুটি ও পেস্ট্রি",
         tick4: "🍬 ঐতিহ্যবাহী খাঁটি মিষ্টি",
         tick5: "📍 অক্সিজেন, বায়েজিদ, চট্টগ্রাম",
-        estSub: "ইন্টারেক্টিভ টুল",
-        estTitle: "দ্রুত মূল্য অনুমানকারী",
-        estDesc: "অর্ডার করার আগে তাৎক্ষণিকভাবে আপনার সম্ভাব্য খরচ হিসাব করুন",
-        estCatLabel: "ক্যাটাগরি নির্বাচন করুন:",
-        optBread: "পাউরুটি ও লোফ (৳৬০)",
-        optBurger: "চিকেন বার্গার (৳৬০)",
-        optCake: "সেলিব্রেশন কেক - ১ পাউন্ড (৳৩৫০)",
-        optLaddu: "ঐতিহ্যবাহী লাড্ডু - প্রতি কেজি (৳২০০)",
-        optSamosa: "চিকেন সমোসা (৳১০)",
-        estQtyLabel: "পরিমাণ / ইউনিট:",
-        estPriceLabel: "আনুমানিক মূল্য:",
-        orderWhatsApp: "হোয়াটসঅ্যাপে অর্ডার করুন",
         whyUs: "কেন আমাদের বেছে নেবেন",
         qualityPromise: "বাগদাদের মানের প্রতিশ্রুতি",
         feat1Title: "সর্বোচ্চ তাজাভাব",
@@ -682,18 +654,6 @@ const translations = {
         tick3: "🥐 خبز ومعجنات حرفية",
         tick4: "🍬 حلويات تقليدية أصيلة",
         tick5: "📍 أوكسجين، بايزيد، شيتاغونغ",
-        estSub: "أداة تفاعلية",
-        estTitle: "حاسبة أسعار الطلبات السريعة",
-        estDesc: "احسب إجمالي تكلفة المخبوزات المقدرة فوراً قبل الطلب",
-        estCatLabel: "اختر الفئة:",
-        optBread: "خبز ورغيف (৳60)",
-        optBurger: "برجر دجاج (৳60)",
-        optCake: "كعكة الاحتفال - 1 باوند (৳350)",
-        optLaddu: "لاديو تقليدي - لكل كغ (৳200)",
-        optSamosa: "سمبوسة دجاج (৳10)",
-        estQtyLabel: "الكمية / الوحدات:",
-        estPriceLabel: "السعر المقدر:",
-        orderWhatsApp: "اطلب عبر الواتساب",
         whyUs: "لماذا تختارنا",
         qualityPromise: "وعد الجودة من بغداد",
         feat1Title: "نضارة فائقة",
@@ -792,18 +752,6 @@ const translations = {
         tick3: "🥐 आर्टिसनल ब्रेड और पेस्ट्री",
         tick4: "🍬 प्रामाणिक पारंपरिक मिठाइयाँ",
         tick5: "📍 ऑक्सीजन, बायेजीद, चटगांव",
-        estSub: "इंटरैक्टिव टूल",
-        estTitle: "त्वरित ऑर्डर मूल्य अनुमानक",
-        estDesc: "ऑर्डर करने से पहले तुरंत अपने अनुमानित बेकरी कुल की गणना करें",
-        estCatLabel: "श्रेणी चुनें:",
-        optBread: "ब्रेड और लोफ (৳60)",
-        optBurger: "चिकन बर्गर (৳60)",
-        optCake: "सेलिब्रेशन केक - 1 पाउंड (৳350)",
-        optLaddu: "पारंपरिक लड्डू - प्रति किलो (৳200)",
-        optSamosa: "चिकन समोसा (৳10)",
-        estQtyLabel: "मात्रा / यूनिट:",
-        estPriceLabel: "अनुमानित मूल्य:",
-        orderWhatsApp: "व्हाट्सएप के जरिए ऑर्डर करें",
         whyUs: "हमें क्यों चुनें",
         qualityPromise: "बगदाद गुणवत्ता का वादा",
         feat1Title: "बेजोड़ ताज़गी",
@@ -902,18 +850,6 @@ const translations = {
         tick3: "🥐 職人技のパン＆ペストリー",
         tick4: "🍬 本格的な伝統スイーツ",
         tick5: "📍 オキシゲン、バイズィッド、チッタゴン",
-        estSub: "インタラクティブツール",
-        estTitle: "クイック注文価格見積もり",
-        estDesc: "ご注文前に、ベーカリーの推定合計金額を即座に計算できます",
-        estCatLabel: "カテゴリーを選択:",
-        optBread: "パン・食パン (৳60)",
-        optBurger: "チキンバーガー (৳60)",
-        optCake: "お祝いケーキ - 1ポンド (৳350)",
-        optLaddu: "伝統的ラドゥ - 1kgあたり (৳200)",
-        optSamosa: "チキンサモサ (৳10)",
-        estQtyLabel: "数量 / 単位:",
-        estPriceLabel: "推定価格:",
-        orderWhatsApp: "WhatsAppで注文する",
         whyUs: "選ばれる理由",
         qualityPromise: "バグダッド品質の約束",
         feat1Title: "最高の新鮮さ",
@@ -1012,18 +948,6 @@ const translations = {
         tick3: "🥐 手工面包与糕点",
         tick4: "🍬 正宗传统甜点",
         tick5: "📍 吉大港巴耶齐德氧气区",
-        estSub: "互动工具",
-        estTitle: "快速订单价格估算器",
-        estDesc: "在订购前立即计算您的预估烘焙总价",
-        estCatLabel: "选择分类：",
-        optBread: "面包与吐司 (৳60)",
-        optBurger: "香辣鸡腿堡 (৳60)",
-        optCake: "庆祝蛋糕 - 1磅 (৳350)",
-        optLaddu: "传统拉杜 - 每公斤 (৳200)",
-        optSamosa: "鸡肉咖喱角 (৳10)",
-        estQtyLabel: "数量 / 单位：",
-        estPriceLabel: "预估价格：",
-        orderWhatsApp: "通过 WhatsApp 订购",
         whyUs: "为什么选择我们",
         qualityPromise: "巴格达品质承诺",
         feat1Title: "专属新鲜度",
@@ -1122,18 +1046,6 @@ const translations = {
         tick3: "🥐 آرٹیسনل بریڈز اور پیسٹریز",
         tick4: "🍬 مستند روایتی مٹھائیاں",
         tick5: "📍 آکسیجن، بایزید، چیٹاگانگ",
-        estSub: "انٹرایکٹو ٹول",
-        estTitle: "فوری آرڈر پرائس ایسٹیمیٹر",
-        estDesc: "آرڈر کرنے سے پہلے فوری طور پر اپنی بیکری کی کل تخمینی لاگت کا حساب لگائیں",
-        estCatLabel: "زمرہ منتخب کریں:",
-        optBread: "بریڈ اور لوف (৳60)",
-        optBurger: "چکن برگر (৳60)",
-        optCake: "سیلیبریشن کیک - 1 پاؤنڈ (৳350)",
-        optLaddu: "روایتی لڈو - فی کلو (৳200)",
-        optSamosa: "چکن سموسہ (৳10)",
-        estQtyLabel: "مقدار / یونٹس:",
-        estPriceLabel: "تخمینی قیمت:",
-        orderWhatsApp: "واٹس ایپ کے ذریعے آرڈر کریں",
         whyUs: "ہمیں کیوں منتخب کریں",
         qualityPromise: "بغداد کوالٹی کا وعدہ",
         feat1Title: "بہترین تازگی",
@@ -1195,7 +1107,7 @@ const translations = {
         faq4Q: "کیا آپ کی مصنوعات روزانہ تازہ بیک کی جاتی ہیں؟",
         faq4A: "بالکل۔ ہماری تمام بریڈز، فاسٹ فوڈ، سنیکس اور روایتی مٹھائیاں بہترین تازگی اور ذائقے کی ضمانت کے لیے روزانہ چھوٹے بیچوں میں آن سائٹ بنائی جاتی ہیں۔",
         findUs: "ہمیں تلاش کریں",
-        contactTitle: "ہماری بیکری کا دورہ کریں یا رابطہ کریں",
+        contactTitle: "हमारी بیکری का دورہ کریں یا رابطہ کریں",
         contLoc: "مقام",
         contLocVal: "آکسیجن، بایزید، چیٹاگانگ، بنگلہ دیش",
         contTel: "ٹیلیفون",
@@ -1209,7 +1121,7 @@ const translations = {
         lblFeedback: "آپ کی رائے:",
         btnSubmitReview: "ریویو جمع کرائیں",
         footerSince: "1998 سے۔",
-        footerNav: "فوری نیویگیشن",
+        footerNav: "فوری نیویগیشن",
         footerConnect: "ہم سے جڑیں",
         footerCopy: "© 2026 Bagdad Bread Factory & Sweets. All Rights Reserved."
     }
@@ -1220,22 +1132,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const langDropdown = document.getElementById("langDropdown");
     const currentLangLabel = document.getElementById("currentLangLabel");
 
- 
-    langToggleBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        langDropdown.style.display = langDropdown.style.display === "block" ? "none" : "block";
-    });
+    if (langToggleBtn && langDropdown) {
+        langToggleBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            langDropdown.style.display = langDropdown.style.display === "block" ? "none" : "block";
+        });
 
-    document.addEventListener("click", () => {
-        langDropdown.style.display = "none";
-    });
-
+        document.addEventListener("click", () => {
+            langDropdown.style.display = "none";
+        });
+    }
 
     function setLanguage(lang) {
         localStorage.setItem("bagdad_lang", lang);
-        currentLangLabel.textContent = lang.toUpperCase();
+        if (currentLangLabel) {
+            currentLangLabel.textContent = lang.toUpperCase();
+        }
         
-   
         if (lang === "ar") {
             document.documentElement.setAttribute("dir", "rtl");
             document.documentElement.setAttribute("lang", "ar");
@@ -1243,7 +1156,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.documentElement.setAttribute("dir", "ltr");
             document.documentElement.setAttribute("lang", lang);
         }
-
 
         const elements = document.querySelectorAll("[data-key]");
         elements.forEach(el => {
@@ -1254,15 +1166,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-  
     document.querySelectorAll(".lang-option").forEach(btn => {
         btn.addEventListener("click", () => {
             const lang = btn.getAttribute("data-lang");
             setLanguage(lang);
-            langDropdown.style.display = "none";
+            if (langDropdown) {
+                langDropdown.style.display = "none";
+            }
         });
     });
-
 
     const savedLang = localStorage.getItem("bagdad_lang") || "en";
     setLanguage(savedLang);
