@@ -13,16 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeAnnouncement && announcementBar) {
         closeAnnouncement.addEventListener('click', () => {
             announcementBar.style.display = 'none';
-            siteHeader.style.top = '0';
+            if (siteHeader) siteHeader.style.top = '0';
         });
     }
 
     // 2. Sticky header & scroll state
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            siteHeader.classList.add('scrolled');
-        } else {
-            siteHeader.classList.remove('scrolled');
+        if (siteHeader) {
+            if (window.scrollY > 40) {
+                siteHeader.classList.add('scrolled');
+            } else {
+                siteHeader.classList.remove('scrolled');
+            }
         }
 
         if (scrollToTopBtn) {
@@ -73,12 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const now = new Date();
             const hour = now.getHours();
             const statusText = storeStatusBadge.querySelector('.status-text');
-            if (hour >= 7 && hour < 23) {
-                storeStatusBadge.className = 'store-status-badge open';
-                statusText.textContent = 'Open Now (Till 11 PM)';
-            } else {
-                storeStatusBadge.className = 'store-status-badge closed';
-                statusText.textContent = 'Closed (Opens 7 AM)';
+            if (statusText) {
+                if (hour >= 7 && hour < 23) {
+                    storeStatusBadge.className = 'store-status-badge open';
+                    statusText.textContent = 'Open Now (Till 11 PM)';
+                } else {
+                    storeStatusBadge.className = 'store-status-badge closed';
+                    statusText.textContent = 'Closed (Opens 7 AM)';
+                }
             }
         };
         checkStoreStatus();
@@ -202,9 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span>৳${item.price} x ${item.qty} = ৳${itemTotal}</span>
                     </div>
                     <div class="cart-item-controls">
-                        <button class="cart-qty-btn" onclick="decreaseCartQty(${index})">-</button>
+                        <button class="cart-qty-btn" type="button" data-action="decrease" data-index="${index}">-</button>
                         <span>${item.qty}</span>
-                        <button class="cart-qty-btn" onclick="increaseCartQty(${index})">+</button>
+                        <button class="cart-qty-btn" type="button" data-action="increase" data-index="${index}">+</button>
                     </div>
                 </div>
             `;
@@ -215,22 +219,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (checkoutWhatsAppBtn) checkoutWhatsAppBtn.disabled = false;
     };
 
-    window.increaseCartQty = (index) => {
-        cart[index].qty++;
-        updateCartUI();
-    };
-
-    window.decreaseCartQty = (index) => {
-        cart[index].qty--;
-        if (cart[index].qty <= 0) {
-            cart.splice(index, 1);
-        }
-        updateCartUI();
-    };
+    // Event delegation for cart qty buttons to avoid global scope clutter
+    if (cartItemsContainer) {
+        cartItemsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('cart-qty-btn')) {
+                const index = parseInt(e.target.getAttribute('data-index'), 10);
+                const action = e.target.getAttribute('data-action');
+                if (action === 'increase') {
+                    cart[index].qty++;
+                } else if (action === 'decrease') {
+                    cart[index].qty--;
+                    if (cart[index].qty <= 0) {
+                        cart.splice(index, 1);
+                    }
+                }
+                updateCartUI();
+            }
+        });
+    }
 
     if (cartToggleBtn && cartDrawer) {
         cartToggleBtn.addEventListener('click', () => cartDrawer.classList.add('active'));
-        closeCartBtn.addEventListener('click', () => cartDrawer.classList.remove('active'));
+        if (closeCartBtn) {
+            closeCartBtn.addEventListener('click', () => cartDrawer.classList.remove('active'));
+        }
         cartDrawer.addEventListener('click', (e) => {
             if (e.target === cartDrawer) cartDrawer.classList.remove('active');
         });
@@ -239,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.btn-add-cart').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const row = e.target.closest('tr');
+            if (!row) return;
             const name = row.getAttribute('data-name');
             const price = parseFloat(row.getAttribute('data-price'));
 
@@ -277,8 +290,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.gallery-item').forEach(item => {
         item.addEventListener('click', () => {
-            const imgSrc = item.querySelector('img').src;
-            const caption = item.getAttribute('data-caption');
+            const imgElement = item.querySelector('img');
+            if (!imgElement) return;
+            const imgSrc = imgElement.src;
+            const caption = item.getAttribute('data-caption') || '';
             if (lightboxImg && lightboxModal) {
                 lightboxImg.src = imgSrc;
                 lightboxCaption.textContent = caption;
@@ -287,8 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    if (closeLightbox && lightboxModal) {
-        closeLightbox.addEventListener('click', () => lightboxModal.classList.remove('active'));
+    if (lightboxModal) {
+        if (closeLightbox) {
+            closeLightbox.addEventListener('click', () => lightboxModal.classList.remove('active'));
+        }
         lightboxModal.addEventListener('click', (e) => {
             if (e.target === lightboxModal) lightboxModal.classList.remove('active');
         });
@@ -301,9 +318,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewForm = document.getElementById('reviewForm');
     const testimonialsGrid = document.getElementById('testimonialsGrid');
 
-    if (openReviewModalBtn && reviewModal) {
-        openReviewModalBtn.addEventListener('click', () => reviewModal.classList.add('active'));
-        closeReviewModal.addEventListener('click', () => reviewModal.classList.remove('active'));
+    if (reviewModal) {
+        if (openReviewModalBtn) {
+            openReviewModalBtn.addEventListener('click', () => reviewModal.classList.add('active'));
+        }
+        if (closeReviewModal) {
+            closeReviewModal.addEventListener('click', () => reviewModal.classList.remove('active'));
+        }
         reviewModal.addEventListener('click', (e) => {
             if (e.target === reviewModal) reviewModal.classList.remove('active');
         });
@@ -312,10 +333,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reviewForm && testimonialsGrid) {
         reviewForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = document.getElementById('reviewerName').value;
-            const role = document.getElementById('reviewerRole').value;
-            const starsCount = parseInt(document.getElementById('reviewerStars').value);
-            const text = document.getElementById('reviewerText').value;
+            const reviewerNameEl = document.getElementById('reviewerName');
+            const reviewerRoleEl = document.getElementById('reviewerRole');
+            const reviewerStarsEl = document.getElementById('reviewerStars');
+            const reviewerTextEl = document.getElementById('reviewerText');
+
+            const name = reviewerNameEl ? reviewerNameEl.value : '';
+            const role = reviewerRoleEl ? reviewerRoleEl.value : '';
+            const starsCount = reviewerStarsEl ? parseInt(reviewerStarsEl.value, 10) || 5 : 5;
+            const text = reviewerTextEl ? reviewerTextEl.value : '';
 
             let starsHTML = '';
             for (let i = 0; i < starsCount; i++) {
@@ -333,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             testimonialsGrid.prepend(newCard);
-            reviewModal.classList.remove('active');
+            if (reviewModal) reviewModal.classList.remove('active');
             reviewForm.reset();
             alert('Thank you for your valuable review!');
         });
@@ -370,26 +396,113 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(styleSheet);
-});
 
-<script>
+    // ===== Custom Cake Builder (multi-step form) =====
     let currentStep = 0;
     const steps = document.querySelectorAll(".step-content");
     const progressDots = document.querySelectorAll(".progress-dot");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function sendToWhatsApp() {
+        const phoneNumber = "8801711063961";
+        
+        const sumSize = document.getElementById('sumSize');
+        const sumFlavor = document.getElementById('sumFlavor');
+        const sumFrosting = document.getElementById('sumFrosting');
+        const sumColor = document.getElementById('sumColor');
+        const sumMessage = document.getElementById('sumMessage');
+        const sumAddons = document.getElementById('sumAddons');
+        const sumTotal = document.getElementById('sumTotal');
+
+        const size = sumSize ? sumSize.textContent : '';
+        const flavor = sumFlavor ? sumFlavor.textContent : '';
+        const frosting = sumFrosting ? sumFrosting.textContent : '';
+        const color = sumColor ? sumColor.textContent : '';
+        const message = sumMessage ? sumMessage.textContent : '';
+        const addons = sumAddons ? sumAddons.textContent : '';
+        const total = sumTotal ? sumTotal.textContent : '';
+
+        const text = `Hello! I want to order a custom cake:%0A%0A*Size:* ${size}%0A*Flavor:* ${flavor}%0A*Frosting:* ${frosting}%0A*Color Theme:* ${color}%0A*Cake Message:* ${message}%0A*Add-ons:* ${addons}%0A%0A*Total Cost:* ${total}`;
+
+        const url = `https://wa.me/${phoneNumber}?text=${text}`;
+        window.open(url, '_blank');
+    }
+
+    function updateSummaryAndPrice() {
+        let total = 0;
+
+        const selectedSize = document.querySelector('input[name="size"]:checked');
+        const sumSize = document.getElementById('sumSize');
+        if (selectedSize && sumSize) {
+            total += parseFloat(selectedSize.dataset.price) || 0;
+            sumSize.textContent = selectedSize.value;
+        }
+
+        const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
+        const sumFlavor = document.getElementById('sumFlavor');
+        if (selectedFlavor && sumFlavor) {
+            total += parseFloat(selectedFlavor.dataset.price) || 0;
+            sumFlavor.textContent = selectedFlavor.value;
+        }
+
+        const selectedFrosting = document.querySelector('input[name="frosting"]:checked');
+        const sumFrosting = document.getElementById('sumFrosting');
+        if (selectedFrosting && sumFrosting) {
+            total += parseFloat(selectedFrosting.dataset.price) || 0;
+            sumFrosting.textContent = selectedFrosting.value;
+        }
+
+        const colorThemeInput = document.getElementById('colorTheme');
+        const sumColor = document.getElementById('sumColor');
+        if (colorThemeInput && sumColor) {
+            const colorVal = colorThemeInput.value.trim();
+            sumColor.textContent = colorVal ? colorVal : 'Default';
+        }
+
+        const cakeMessageInput = document.getElementById('cakeMessage');
+        const sumMessage = document.getElementById('sumMessage');
+        if (cakeMessageInput && sumMessage) {
+            const msgVal = cakeMessageInput.value.trim();
+            sumMessage.textContent = msgVal ? msgVal : 'None';
+        }
+
+        let addonNames = [];
+        document.querySelectorAll('input[name="addon"]:checked').forEach(addon => {
+            total += parseFloat(addon.dataset.price) || 0;
+            const cardStrong = addon.closest('.option-card')?.querySelector('strong');
+            if (cardStrong) {
+                addonNames.push(cardStrong.textContent);
+            }
+        });
+        const sumAddons = document.getElementById('sumAddons');
+        if (sumAddons) {
+            sumAddons.textContent = addonNames.length > 0 ? addonNames.join(', ') : 'None';
+        }
+
+        const sumTotal = document.getElementById('sumTotal');
+        if (sumTotal) {
+            sumTotal.textContent = `৳${total.toLocaleString('en-IN')}`;
+        }
+    }
 
     function showStep(n) {
+        if (steps.length === 0) return;
         steps[currentStep].classList.remove("active");
         currentStep = n;
         steps[currentStep].classList.add("active");
 
-        document.getElementById("prevBtn").style.display = currentStep === 0 ? "none" : "inline-block";
-        const nextBtn = document.getElementById("nextBtn");
-        if (currentStep === steps.length - 1) {
-            nextBtn.textContent = "Order via WhatsApp";
-            nextBtn.className = "btn-submit";
-        } else {
-            nextBtn.textContent = "Next Step";
-            nextBtn.className = "btn-next";
+        if (prevBtn) {
+            prevBtn.style.display = currentStep === 0 ? "none" : "inline-block";
+        }
+        if (nextBtn) {
+            if (currentStep === steps.length - 1) {
+                nextBtn.textContent = "Order via WhatsApp";
+                nextBtn.className = "btn-submit";
+            } else {
+                nextBtn.textContent = "Next Step";
+                nextBtn.className = "btn-next";
+            }
         }
 
         progressDots.forEach((dot, index) => {
@@ -397,23 +510,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function nextPrev(n) {
+    window.nextPrev = (n) => {
+        if (steps.length === 0) return;
         if (currentStep === steps.length - 1 && n === 1) {
             sendToWhatsApp();
             return;
         }
         currentStep += n;
+        if (currentStep < 0) currentStep = 0;
+        if (currentStep >= steps.length) currentStep = steps.length - 1;
         showStep(currentStep);
-    }
+    };
 
     document.querySelectorAll('.option-card').forEach(card => {
         const input = card.querySelector('input');
+        if (!input) return;
         
         card.addEventListener('click', () => {
             if (input.type === 'radio') {
                 const name = input.name;
                 document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
-                    radio.closest('.option-card').classList.remove('selected');
+                    const parentCard = radio.closest('.option-card');
+                    if (parentCard) parentCard.classList.remove('selected');
                 });
                 card.classList.add('selected');
                 input.checked = true;
@@ -425,60 +543,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    document.getElementById('colorTheme').addEventListener('input', updateSummaryAndPrice);
-    document.getElementById('cakeMessage').addEventListener('input', updateSummaryAndPrice);
+    const colorThemeInput = document.getElementById('colorTheme');
+    const cakeMessageInput = document.getElementById('cakeMessage');
+    if (colorThemeInput) colorThemeInput.addEventListener('input', updateSummaryAndPrice);
+    if (cakeMessageInput) cakeMessageInput.addEventListener('input', updateSummaryAndPrice);
 
-    function updateSummaryAndPrice() {
-        let total = 0;
-
-        const selectedSize = document.querySelector('input[name="size"]:checked');
-        if (selectedSize) {
-            total += parseFloat(selectedSize.dataset.price);
-            document.getElementById('sumSize').textContent = selectedSize.value;
-        }
-
-        const selectedFlavor = document.querySelector('input[name="flavor"]:checked');
-        if (selectedFlavor) {
-            total += parseFloat(selectedFlavor.dataset.price);
-            document.getElementById('sumFlavor').textContent = selectedFlavor.value;
-        }
-
-        const selectedFrosting = document.querySelector('input[name="frosting"]:checked');
-        if (selectedFrosting) {
-            total += parseFloat(selectedFrosting.dataset.price);
-            document.getElementById('sumFrosting').textContent = selectedFrosting.value;
-        }
-
-        const colorVal = document.getElementById('colorTheme').value.trim();
-        document.getElementById('sumColor').textContent = colorVal ? colorVal : 'Default';
-
-        const msgVal = document.getElementById('cakeMessage').value.trim();
-        document.getElementById('sumMessage').textContent = msgVal ? msgVal : 'None';
-
-        let addonNames = [];
-        document.querySelectorAll('input[name="addon"]:checked').forEach(addon => {
-            total += parseFloat(addon.dataset.price);
-            addonNames.push(addon.closest('.option-card').querySelector('strong').textContent);
-        });
-        document.getElementById('sumAddons').textContent = addonNames.length > 0 ? addonNames.join(', ') : 'None';
-
-        document.getElementById('sumTotal').textContent = `৳${total.toLocaleString('en-IN')}`;
+    // Initial call to set state for summary/price
+    if (steps.length > 0) {
+        updateSummaryAndPrice();
     }
-
-    function sendToWhatsApp() {
-        const phoneNumber = "8801711063961";
-        
-        const size = document.getElementById('sumSize').textContent;
-        const flavor = document.getElementById('sumFlavor').textContent;
-        const frosting = document.getElementById('sumFrosting').textContent;
-        const color = document.getElementById('sumColor').textContent;
-        const message = document.getElementById('sumMessage').textContent;
-        const addons = document.getElementById('sumAddons').textContent;
-        const total = document.getElementById('sumTotal').textContent;
-
-        const text = `Hello! I want to order a custom cake:%0A%0A*Size:* ${size}%0A*Flavor:* ${flavor}%0A*Frosting:* ${frosting}%0A*Color Theme:* ${color}%0A*Cake Message:* ${message}%0A*Add-ons:* ${addons}%0A%0A*Total Cost:* ${total}`;
-
-        const url = `https://wa.me/${phoneNumber}?text=${text}`;
-        window.open(url, '_blank');
-    }
-</script>
+});
